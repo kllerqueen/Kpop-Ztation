@@ -1,8 +1,6 @@
-﻿<style >
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap');
-</style >
+﻿@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap');
 
-* {
+.*{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -21,6 +19,13 @@ li, a, button{
     text-decoration: none;
 }
 
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
+}
+
 .logo {
     font-family: Montserrat, sans-serif;
     font-weight: 500;
@@ -29,18 +34,11 @@ li, a, button{
     cursor: pointer;
 }
 
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 30px 10%;
-}
-
-.navbar-links {
+ul {
     list-style: none;
 }
 
-.navbar-links li {
+ul li {
     display: inline-block;
     padding: 0px 20px;
 }
@@ -54,7 +52,7 @@ header {
 }
 
 button {
-    Padding: after 9px 25px;
+    padding: 9px 25px;
     background-color: rgba(0,136,169,1);
     border: none;
     border-radius: 50px;
@@ -63,5 +61,5 @@ button {
 }
 
 button:hover{
-    background:
+    background-color: rgba(0, 136, 169, 0.8);
 }
