@@ -79,6 +79,7 @@
     <Content Include="App_Data\KpopZtationDatabase_log.ldf">
       <DependentUpon>KpopZtationDatabase.mdf</DependentUpon>
     </Content>
+    <Content Include="CSS\Style.css" />
     <Content Include="Model\KpopZtationModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>KpopZtationModel.Context.cs</LastGenOutput>

@@ -7,16 +7,23 @@
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
+    <link href="../CSS/Style.css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server">
 
-        <div>
-            <asp:LinkButton ID="homeButton" runat="server" OnClick="homeButton_Click">KpopZtation</asp:LinkButton>
-            &nbsp
-            <asp:LinkButton ID="loginButton" runat="server" OnClick="loginButton_Click">Login</asp:LinkButton>
-            &nbsp
-            <asp:LinkButton ID="registerButton" runat="server" OnClick="registerButton_Click">Register</asp:LinkButton>
+        <div class="navbar-container">
+            <header>
+                <h1 class="logo">KpopZtation</h1>
+                <nav>
+                    <ul class="navbar-link">
+                        <li><a href="">Home</a></li>
+                        <li><a href="../Guest/Login.aspx">Login</a></li>
+                        <li><a href="../Guest/Register.aspx">Register</a></li>
+                    </ul>
+                </nav>
+                <a class="cta" href="#"><button>Logout</button></a>
+            </header>
         </div>
 
         <div>

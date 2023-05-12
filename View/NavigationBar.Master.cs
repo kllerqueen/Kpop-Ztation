@@ -13,20 +13,5 @@ namespace Kpop_Ztation.View
         {
 
         }
-
-        protected void homeButton_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        protected void loginButton_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("Login.aspx");
-        }
-
-        protected void registerButton_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("Register.aspx");
-        }
     }
 }
