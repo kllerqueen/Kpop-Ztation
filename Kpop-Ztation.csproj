@@ -93,6 +93,7 @@
     <Content Include="View\Guest\Login.aspx" />
     <Content Include="View\Guest\Register.aspx" />
     <Content Include="View\Homepage.aspx" />
+    <Content Include="View\UpdateArtist.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -162,6 +163,13 @@
     </Compile>
     <Compile Include="View\NavigationBar.Master.designer.cs">
       <DependentUpon>NavigationBar.Master</DependentUpon>
+    </Compile>
+    <Compile Include="View\UpdateArtist.aspx.cs">
+      <DependentUpon>UpdateArtist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\UpdateArtist.aspx.designer.cs">
+      <DependentUpon>UpdateArtist.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
