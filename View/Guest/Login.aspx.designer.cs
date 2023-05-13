@@ -42,15 +42,6 @@ namespace Kpop_Ztation.View.Guest
         protected global::System.Web.UI.WebControls.TextBox emailTxt;
 
         /// <summary>
-        /// emailError control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label emailError;
-
-        /// <summary>
         /// Label2 control.
         /// </summary>
         /// <remarks>
@@ -69,15 +60,6 @@ namespace Kpop_Ztation.View.Guest
         protected global::System.Web.UI.WebControls.TextBox passwordTxt;
 
         /// <summary>
-        /// passwordError control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label passwordError;
-
-        /// <summary>
         /// rememberMe control.
         /// </summary>
         /// <remarks>
@@ -94,6 +76,15 @@ namespace Kpop_Ztation.View.Guest
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label3;
+
+        /// <summary>
+        /// errorText control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label errorText;
 
         /// <summary>
         /// loginButton control.
