@@ -20,7 +20,7 @@ namespace Kpop_Ztation.Controller
                 return "Invalid input";
             }
             AccountHandler.CreateAccount(Name, Email, Password, Gender, Address);
-            return "Success!";
+            return "Account Successfuly Created.";
         }
 
         public static bool Login(String Email, String Password)

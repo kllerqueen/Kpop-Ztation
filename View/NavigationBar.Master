@@ -17,9 +17,9 @@
                 <h1 class="logo">KpopZtation</h1>
                 <nav>
                     <ul class="navbar-link">
-                        <li><a href="">Home</a></li>
-                        <li><a href="../Guest/Login.aspx">Login</a></li>
-                        <li><a href="../Guest/Register.aspx">Register</a></li>
+                        <li><a href="../View/Homepage.aspx">Home</a></li>
+                        <li><a href="../View/LoginPage.aspx">Login</a></li>
+                        <li><a href="../View/RegisterPage.aspx">Register</a></li>
                     </ul>
                 </nav>
                 <a class="cta" href="#"><button>Logout</button></a>
