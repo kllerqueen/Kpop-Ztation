@@ -42,15 +42,6 @@ namespace Kpop_Ztation.View.Guest
         protected global::System.Web.UI.WebControls.TextBox nameTxt;
 
         /// <summary>
-        /// nameError control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label nameError;
-
-        /// <summary>
         /// Label2 control.
         /// </summary>
         /// <remarks>
@@ -69,15 +60,6 @@ namespace Kpop_Ztation.View.Guest
         protected global::System.Web.UI.WebControls.TextBox emailTxt;
 
         /// <summary>
-        /// emailError control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label emailError;
-
-        /// <summary>
         /// Label3 control.
         /// </summary>
         /// <remarks>
@@ -87,13 +69,13 @@ namespace Kpop_Ztation.View.Guest
         protected global::System.Web.UI.WebControls.Label Label3;
 
         /// <summary>
-        /// RadioButtonList1 control.
+        /// GenderSelect control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList RadioButtonList1;
+        protected global::System.Web.UI.WebControls.RadioButtonList GenderSelect;
 
         /// <summary>
         /// Label4 control.
@@ -114,15 +96,6 @@ namespace Kpop_Ztation.View.Guest
         protected global::System.Web.UI.WebControls.TextBox addressTxt;
 
         /// <summary>
-        /// addressError control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label addressError;
-
-        /// <summary>
         /// Label5 control.
         /// </summary>
         /// <remarks>
@@ -132,22 +105,22 @@ namespace Kpop_Ztation.View.Guest
         protected global::System.Web.UI.WebControls.Label Label5;
 
         /// <summary>
-        /// passwordText control.
+        /// passwordTxt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox passwordText;
+        protected global::System.Web.UI.WebControls.TextBox passwordTxt;
 
         /// <summary>
-        /// passwordError control.
+        /// errorTxt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label passwordError;
+        protected global::System.Web.UI.WebControls.Label errorTxt;
 
         /// <summary>
         /// registerButton control.
