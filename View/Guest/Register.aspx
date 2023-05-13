@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/NavigationBar.Master" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="Kpop_Ztation.View.Guest.Register" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="WebsiteContent" runat="server">
     <asp:Label ID="Label6" runat="server" Text="Register Page"></asp:Label>
 

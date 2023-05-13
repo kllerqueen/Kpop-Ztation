@@ -92,6 +92,7 @@
     </Content>
     <Content Include="View\Guest\Login.aspx" />
     <Content Include="View\Guest\Register.aspx" />
+    <Content Include="View\Homepage.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -147,6 +148,13 @@
     </Compile>
     <Compile Include="View\Guest\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Homepage.aspx.cs">
+      <DependentUpon>Homepage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Homepage.aspx.designer.cs">
+      <DependentUpon>Homepage.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\NavigationBar.Master.cs">
       <DependentUpon>NavigationBar.Master</DependentUpon>

@@ -23,9 +23,13 @@ namespace Kpop_Ztation.Controller
             return "Success!";
         }
 
-        //public static String Login(String Email, String Password)
-        //{
-
-        //}
+        public static bool Login(String Email, String Password)
+        {
+            if(Email.Equals("") || Password.Equals(""))
+            {
+                return false;
+            }
+            return true;
+        }
     }
 }

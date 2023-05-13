@@ -9,17 +9,17 @@
     <br />
     <asp:Label ID="Label1" runat="server" Text="Email"></asp:Label> &nbsp
     <asp:TextBox ID="emailTxt" runat="server"></asp:TextBox>
-    <asp:Label ID="emailError" runat="server" Text=""></asp:Label>
+    
     <br />
     <asp:Label ID="Label2" runat="server" Text="Password"></asp:Label> &nbsp
-    <asp:TextBox ID="passwordTxt" runat="server"></asp:TextBox>
-    <asp:Label ID="passwordError" runat="server" Text=""></asp:Label>
+    <asp:TextBox ID="passwordTxt" runat="server"></asp:TextBox>    
 
     <br />
     <asp:CheckBox ID="rememberMe" runat="server" />
     <asp:Label ID="Label3" runat="server" Text="Remember Me"></asp:Label>
 
     <br />
-    <asp:Button ID="loginButton" runat="server" Text="Login" />
+    <asp:Label ID="errorText" runat="server" Text=""></asp:Label> <br />
+    <asp:Button ID="loginButton" runat="server" Text="Login" OnClick="loginButton_Click" />
 
 </asp:Content>
