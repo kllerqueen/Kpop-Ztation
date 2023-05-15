@@ -21,8 +21,7 @@ namespace Kpop_Ztation.View
             string Email = emailTxt.Text;
             string Gender = GenderSelect.SelectedItem.Value.ToString();
             string Address = addressTxt.Text;
-            string Password = passwordTxt.Text;
-            //string Role = "Customer";
+            string Password = passwordTxt.Text;            
 
             String labelText = AccountController.CreateAccount(Name, Email, Password, Gender, Address);
             errorTxt.Text = labelText;

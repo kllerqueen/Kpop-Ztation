@@ -16,7 +16,7 @@ namespace Kpop_Ztation.Factory
             User.CustomerPassword = Password;
             User.CustomerGender = Gender;
             User.CustomerAddress = Address;
-            //User.CustomerRole = Role;
+            User.CustomerRole = "User";
 
             return User;
         }

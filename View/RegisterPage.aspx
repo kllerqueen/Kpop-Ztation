@@ -22,7 +22,7 @@
     <asp:TextBox ID="addressTxt" runat="server"></asp:TextBox> <br />
 
     <asp:Label ID="Label5" runat="server" Text="Password"></asp:Label> &nbsp
-    <asp:TextBox ID="passwordTxt" runat="server"></asp:TextBox> <br />
+    <asp:TextBox ID="passwordTxt" runat="server" TextMode="Password"></asp:TextBox> <br />
 
     <asp:Label ID="errorTxt" runat="server" Text=""></asp:Label> <br />
     <asp:Button ID="registerButton" runat="server" Text="Register" OnClick="registerButton_Click" />

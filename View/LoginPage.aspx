@@ -10,7 +10,7 @@
     
     <br />
     <asp:Label ID="Label2" runat="server" Text="Password"></asp:Label> &nbsp
-    <asp:TextBox ID="passwordTxt" runat="server"></asp:TextBox>    
+    <asp:TextBox ID="passwordTxt" runat="server" TextMode="Password"></asp:TextBox>    
 
     <br />
     <asp:CheckBox ID="rememberMe" runat="server" />
