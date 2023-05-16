@@ -82,17 +82,19 @@
     <Content Include="CSS\Style.css" />
     <Content Include="Model\KpopZtationModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>KpopZtationModel.Context.cs</LastGenOutput>
       <DependentUpon>KpopZtationModel.edmx</DependentUpon>
+      <LastGenOutput>KpopZtationModel.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Model\KpopZtationModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>KpopZtationModel.edmx</DependentUpon>
       <LastGenOutput>KpopZtationModel.cs</LastGenOutput>
     </Content>
-    <Content Include="View\Guest\Login.aspx" />
-    <Content Include="View\Guest\Register.aspx" />
+    <Content Include="View\ArtistDetail.aspx" />
     <Content Include="View\Homepage.aspx" />
+    <Content Include="View\InsertArtist.aspx" />
+    <Content Include="View\LoginPage.aspx" />
+    <Content Include="View\RegisterPage.aspx" />
     <Content Include="View\UpdateArtist.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -136,19 +138,12 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\AccountRepository.cs" />
-    <Compile Include="View\Guest\Login.aspx.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
+    <Compile Include="View\ArtistDetail.aspx.cs">
+      <DependentUpon>ArtistDetail.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="View\Guest\Login.aspx.designer.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="View\Guest\Register.aspx.cs">
-      <DependentUpon>Register.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="View\Guest\Register.aspx.designer.cs">
-      <DependentUpon>Register.aspx</DependentUpon>
+    <Compile Include="View\ArtistDetail.aspx.designer.cs">
+      <DependentUpon>ArtistDetail.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\Homepage.aspx.cs">
       <DependentUpon>Homepage.aspx</DependentUpon>
@@ -157,12 +152,33 @@
     <Compile Include="View\Homepage.aspx.designer.cs">
       <DependentUpon>Homepage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="View\InsertArtist.aspx.cs">
+      <DependentUpon>InsertArtist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\InsertArtist.aspx.designer.cs">
+      <DependentUpon>InsertArtist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\LoginPage.aspx.cs">
+      <DependentUpon>LoginPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\LoginPage.aspx.designer.cs">
+      <DependentUpon>LoginPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View\NavigationBar.Master.cs">
       <DependentUpon>NavigationBar.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="View\NavigationBar.Master.designer.cs">
       <DependentUpon>NavigationBar.Master</DependentUpon>
+    </Compile>
+    <Compile Include="View\RegisterPage.aspx.cs">
+      <DependentUpon>RegisterPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\RegisterPage.aspx.designer.cs">
+      <DependentUpon>RegisterPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\UpdateArtist.aspx.cs">
       <DependentUpon>UpdateArtist.aspx</DependentUpon>

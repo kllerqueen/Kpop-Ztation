@@ -7,11 +7,11 @@
     
 }
 
-.navbar-container {
+.navbar-container, .footer-container{
     background-color: #24252A;
 }
 
-li, a, button{
+li, a, button, footer{
     font-family: Montserrat, sans-serif;
     font-weight: 500;
     font-size: 16px;
@@ -19,7 +19,7 @@ li, a, button{
     text-decoration: none;
 }
 
-header {
+header{
     display: flex;
     justify-content: space-between;
     align-items: center;

@@ -8,6 +8,7 @@
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
     <link href="../CSS/Style.css" rel="stylesheet" runat="server"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <form id="form1" runat="server">
@@ -17,9 +18,9 @@
                 <h1 class="logo">KpopZtation</h1>
                 <nav>
                     <ul class="navbar-link">
-                        <li><a href="">Home</a></li>
-                        <li><a href="../Guest/Login.aspx">Login</a></li>
-                        <li><a href="../Guest/Register.aspx">Register</a></li>
+                        <li><a href="../View/Homepage.aspx">Home</a></li>
+                        <li><a href="../View/LoginPage.aspx">Login</a></li>
+                        <li><a href="../View/RegisterPage.aspx">Register</a></li>
                     </ul>
                 </nav>
                 <a class="cta" href="#"><button>Logout</button></a>
@@ -29,6 +30,22 @@
         <div>
             <asp:ContentPlaceHolder ID="WebsiteContent" runat="server">
             </asp:ContentPlaceHolder>
+        </div>
+
+       <div class="footer-container">
+            <footer>
+                <h3>KpopZtation</h3>
+                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris a sagittis mauris, sed suscipit lectus.</p>
+                   <ul class="social-icons">
+                       <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                       <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                       <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                       <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                       <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                   </ul>
+
+                   <p>Lorem ipsum dolor sit amet, <span>consectetur</span></p>
+            </footer>
         </div>
 
     </form>

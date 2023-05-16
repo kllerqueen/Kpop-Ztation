@@ -8,7 +8,7 @@ namespace Kpop_Ztation.Repository
 {
     public class AccountRepository
     {
-        static KpopZtationDatabaseEntities db = new KpopZtationDatabaseEntities();
+        static KpopZtationDatabaseEntities1 db = new KpopZtationDatabaseEntities1();
 
         public static void CreateAccount(Customer User)
         {
