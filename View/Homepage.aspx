@@ -5,6 +5,20 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="WebsiteContent" runat="server">
     <h1>Homepage</h1>
     <asp:Label ID="Label1" runat="server" Text="Artist List"></asp:Label><br />
-    <asp:Button ID="Button1" runat="server" Text="Artist Detail" OnClick="Button1_Click" />
-    <%--<asp:GridView ID="GridView1" runat="server" GridLines="None" ></asp:GridView>--%>
+
+    <a href="/View/ArtistDetail.aspx"><img src="/Images/638059447901481658.jfif"/></a>
+    <h3>BTS</h3>
+    
+    <%--<asp:ListView ID="ArtistListView" runat="server">
+        <ItemTemplate>
+            <div class="list">
+                <table>
+                    <tr><td><img src="<%#Eval("ArtistImage") %>"/></td></tr>
+                    <tr><td><h1><%#Eval("ArtistName") %></h1></td></tr>
+                </table>
+            </div>
+        </ItemTemplate>
+    </asp:ListView>--%>
+
+    <asp:Button ID="Button1" runat="server" Text="Artist Detail" OnClick="Button1_Click" />    
 </asp:Content>

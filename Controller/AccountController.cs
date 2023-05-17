@@ -10,12 +10,12 @@ namespace Kpop_Ztation.Controller
     {
         public static String CreateAccount(String Name, String Email, String Password, String Gender, String Address)
         {
-            if(Functions.CheckEmpty(Name, Email, Password, Gender, Address))
+            if(Functions.CheckEmpty(Name) || Functions.CheckEmpty(Email) || Functions.CheckEmpty(Password) || Functions.CheckEmpty(Gender) || Functions.CheckEmpty(Address))
             {
                 return "Please fill all fields";
             }
 
-            else if(Functions.CheckName(Name) || Functions.CheckEmail(Email) || Gender.Equals("") || Functions.CheckAddress(Address) || Functions.CheckPassword(Password))
+            if(Functions.CheckName(Name) || Functions.CheckEmail(Email) || Gender.Equals("") || Functions.CheckAddress(Address) || Functions.CheckPassword(Password))
             {
                 return "Invalid input";
             }

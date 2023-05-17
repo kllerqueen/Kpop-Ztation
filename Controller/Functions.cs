@@ -8,9 +8,9 @@ namespace Kpop_Ztation.Controller
 {
     public class Functions
     {
-        public static bool CheckEmpty(String Name, String Email, String Password, String Gender, String Address)
+        public static bool CheckEmpty(String Text)
         {
-            if(Name.Equals("") || Email.Equals("") || Password.Equals("") || Gender.Equals("") || Address.Equals(""))
+            if(Text.Equals(""))
             {
                 return true;
             }

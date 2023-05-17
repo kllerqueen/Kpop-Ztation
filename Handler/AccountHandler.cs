@@ -9,12 +9,21 @@ using System.Web;
 namespace Kpop_Ztation.Handler
 {
     public class AccountHandler
-    {
+    {        
+
         public static void CreateAccount(String Name, String Email, String Password, String Gender, String Address)
         {
             Customer User = AccountFactory.CreateAccount(Name, Email, Password, Gender, Address);
 
             AccountRepository.CreateAccount(User);
+            return;
+        }
+
+        public static void CreateArtist(String Name, String Image)
+        {
+            Artist Idol = ArtistFactory.CreateArtist(Name, Image);
+
+            ArtistRepository.CreateArtist(Idol);
             return;
         }
     }
