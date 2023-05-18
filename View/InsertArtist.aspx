@@ -12,5 +12,5 @@
     <asp:FileUpload ID="ImageUpload" runat="server" /> <br />
 
     <asp:Label ID="errorTxt" runat="server" Text=""></asp:Label> <br />
-    <asp:Button ID="InsertArtistButton" runat="server" Text="Insert Artist" OnClick="InsertArtistButton_Click" />
+    <asp:Button ID="InsertArtistButton" runat="server" Text="Add" OnClick="InsertArtistButton_Click" />
 </asp:Content>

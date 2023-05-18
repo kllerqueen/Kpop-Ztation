@@ -4,5 +4,5 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="WebsiteContent" runat="server">
     <h1>Artist Detail</h1>
-    <asp:Button ID="Button1" runat="server" Text="Insert Artist" OnClick="Button1_Click" />
+    
 </asp:Content>
