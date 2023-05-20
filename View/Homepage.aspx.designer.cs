@@ -24,6 +24,15 @@ namespace Kpop_Ztation.View
         protected global::System.Web.UI.WebControls.Label Label1;
 
         /// <summary>
+        /// ArtistListView control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListView ArtistListView;
+
+        /// <summary>
         /// InsertArtistButton control.
         /// </summary>
         /// <remarks>

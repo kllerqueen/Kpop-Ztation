@@ -4,5 +4,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="WebsiteContent" runat="server">
     <h1>Artist Detail</h1>
+
+    <asp:Button ID="InsertAlbumButton" runat="server" Text="Insert Album" OnClick="InsertAlbumButton_Click" />
     
 </asp:Content>

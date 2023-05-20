@@ -14,6 +14,9 @@ namespace Kpop_Ztation.View
 
         }
 
-        
+        protected void InsertAlbumButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("../View/InsertAlbum.aspx");
+        }
     }
 }

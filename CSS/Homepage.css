@@ -1,0 +1,11 @@
+﻿body {
+}
+
+.list{
+    display:flex;
+    justify-content: space-between;
+}
+
+.list:hover{
+    background-color: #6D5D6E;
+}

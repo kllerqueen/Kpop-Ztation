@@ -79,6 +79,7 @@
     <Content Include="App_Data\KpopZtationDatabase_log.ldf">
       <DependentUpon>KpopZtationDatabase.mdf</DependentUpon>
     </Content>
+    <Content Include="CSS\Homepage.css" />
     <Content Include="CSS\Style.css" />
     <Content Include="Model\KpopZtationModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -92,6 +93,7 @@
     </Content>
     <Content Include="View\ArtistDetail.aspx" />
     <Content Include="View\Homepage.aspx" />
+    <Content Include="View\InsertAlbum.aspx" />
     <Content Include="View\InsertArtist.aspx" />
     <Content Include="View\LoginPage.aspx" />
     <Content Include="View\RegisterPage.aspx" />
@@ -154,6 +156,13 @@
     </Compile>
     <Compile Include="View\Homepage.aspx.designer.cs">
       <DependentUpon>Homepage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\InsertAlbum.aspx.cs">
+      <DependentUpon>InsertAlbum.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\InsertAlbum.aspx.designer.cs">
+      <DependentUpon>InsertAlbum.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\InsertArtist.aspx.cs">
       <DependentUpon>InsertArtist.aspx</DependentUpon>

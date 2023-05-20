@@ -13,8 +13,8 @@ namespace Kpop_Ztation.View
     {
         private void updateListView()
         {
-            ArtistGridView.DataSource = ArtistRepository.GetAllArtist();
-            ArtistGridView.DataBind();
+            ArtistListView.DataSource = ArtistRepository.GetAllArtist();
+            ArtistListView.DataBind();
         }
         protected void Page_Load(object sender, EventArgs e)
         {
