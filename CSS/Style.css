@@ -51,7 +51,13 @@ ul li {
     color: #0088a9;
 }
 
-button {
+.cta {
+    font-family: Montserrat, sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #edf0f1;
+    text-decoration: none;
+
     padding: 9px 25px;
     background-color: rgba(0,136,169,1);
     border: none;
@@ -60,6 +66,6 @@ button {
     transition: all 0.3s ease 0s;
 }
 
-button:hover{
+.cta:hover{
     background-color: rgba(0, 136, 169, 0.8);
 }

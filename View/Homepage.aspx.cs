@@ -11,6 +11,7 @@ namespace Kpop_Ztation.View
 {
     public partial class Homepage : System.Web.UI.Page
     {
+        //KpopZtationDatabaseEntities1 db = new KpopZtationDatabaseEntities1();
         private void updateListView()
         {
             ArtistListView.DataSource = ArtistRepository.GetAllArtist();
@@ -18,8 +19,18 @@ namespace Kpop_Ztation.View
         }
         protected void Page_Load(object sender, EventArgs e)
         {
+            //String user = Session["User"].ToString();
+            //Customer data = (from dat in db.Customers where dat.CustomerEmail.Equals(user) select dat).FirstOrDefault();
 
-            updateListView();
+            if (Session["User"] == null)
+            {
+                Response.Redirect("../View/LoginPage.aspx");
+            }            
+            else
+            {
+                updateListView();
+            }            
+
             
         }
 

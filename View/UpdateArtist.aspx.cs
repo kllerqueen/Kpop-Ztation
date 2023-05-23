@@ -11,7 +11,10 @@ namespace Kpop_Ztation.View
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["User"] == null)
+            {
+                Response.Redirect("../View/LoginPage.aspx");
+            }
         }
     }
 }

@@ -20,12 +20,42 @@
                 <h1 class="logo">KpopZtation</h1>
                 <nav>
                     <ul class="navbar-link">
+                        
+                        <%if (Session["User"] == null)
+                            { %>
                         <li><a href="../View/Homepage.aspx">Home</a></li>
                         <li><a href="../View/LoginPage.aspx">Login</a></li>
                         <li><a href="../View/RegisterPage.aspx">Register</a></li>
+                        <%} %>
+
+                        <%else if (Session["User"] != null && checkRole())
+                            { %>
+                        <li><a href="../View/Homepage.aspx">Home</a></li>                        
+                        <li><a href="../View/TransactionPage.aspx">Transaction</a></li>
+                        <li><a href="../View/UpdateProfile.aspx">Update Profile</a></li>
+                        <%} %>
+
+                        <% else
+                            { %>
+                        <li><a href="../View/Homepage.aspx">Home</a></li>
+                        <li><a href="../View/CartPage.aspx">Cart</a></li>
+                        <li><a href="../View/TransactionPage.aspx">Transaction</a></li>
+                        <li><a href="../View/UpdateProfile.aspx">Update Profile</a></li>
+                        <%} %>
+
+                        
                     </ul>
                 </nav>
-                <a class="cta" href="#"><button>Logout</button></a>
+                <%if (Session["User"] == null)
+                    { %>
+                <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
+                <%} %>
+                <%else
+                    { %>
+                <asp:Button ID="logoutButton" class="cta" runat="server" Text="Logout" OnClick="logoutButton_Click" />
+                <%--<a class="cta" href="#"><button>Logout</button></a>--%>
+                <%} %>
+
             </header>
         </div>
 

@@ -31,5 +31,10 @@ namespace Kpop_Ztation.Controller
             }
             return true;
         }
+
+        //public static String checkRole(string Email)
+        //{
+
+        //}
     }
 }

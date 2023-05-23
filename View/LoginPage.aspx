@@ -13,7 +13,7 @@
     <asp:TextBox ID="passwordTxt" runat="server" TextMode="Password"></asp:TextBox>    
 
     <br />
-    <asp:CheckBox ID="rememberMe" runat="server" />
+    <asp:CheckBox ID="rememberMe" runat="server" OnCheckedChanged="rememberMe_CheckedChanged" />
     <asp:Label ID="Label3" runat="server" Text="Remember Me"></asp:Label>
 
     <br />
