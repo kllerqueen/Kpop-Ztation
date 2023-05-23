@@ -12,7 +12,7 @@
                 <table>
                     <tr><td><a href="../View/ArtistDetail.aspx"><img height="320px" src='<%# "/" +  Eval("ArtistImage") %>' width="320px"/></a></td></tr>
                     <tr><td><asp:Label ID="Label2" runat="server" Text='<%# Eval("ArtistName") %>'></asp:Label></td></tr>
-                    <%--<tr><td></td></tr>--%>
+                    
                 </table>
             </div>
         </ItemTemplate>
