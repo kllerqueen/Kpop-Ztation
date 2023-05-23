@@ -5,6 +5,8 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="WebsiteContent" runat="server">
     <h1>Homepage</h1>
     <asp:Label ID="Label1" runat="server" Text="Artist List"></asp:Label><br />
+
+    <asp:Image ID="Image1" runat="server" href="/Image/" />
     
     <asp:ListView ID="ArtistListView" runat="server">
         <ItemTemplate>
