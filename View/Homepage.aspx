@@ -19,7 +19,7 @@
             <ItemTemplate>
                 <div class="list">
                     <table>
-                        <tr><td><a href='<%# "../View/ArtistDetail.aspx?artistId=" + Eval("ArtistID") %>'><img class="home-image" src='<%# "/" +  Eval("ArtistImage") %>' /></a></td></tr>
+                        <tr><td><a href='<%# "../View/ArtistDetail.aspx?artistId=" + Eval("ArtistID") %>'><img class="home-image" src='<%# Eval("ArtistImage") %>' /></a></td></tr>
                         <tr><td><asp:Label ID="Label2" runat="server" Text='<%# Eval("ArtistName") %>'></asp:Label></td></tr>
                     
                     </table>
@@ -28,5 +28,9 @@
         </asp:ListView>   
     </div>
 
-    <asp:Button ID="InsertArtistButton" runat="server" Text="Insert Artist" OnClick="InsertArtistButton_Click"/>   
+    <%if (checkRole())
+        { %>   
+        <asp:Button ID="InsertArtistButton" runat="server" Text="Insert Artist" OnClick="InsertArtistButton_Click"/>
+    <%} %>
+
 </asp:Content>

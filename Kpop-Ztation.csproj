@@ -79,6 +79,7 @@
     <Content Include="App_Data\KpopZtationDatabase_log.ldf">
       <DependentUpon>KpopZtationDatabase.mdf</DependentUpon>
     </Content>
+    <Content Include="CSS\ArtistDetail.css" />
     <Content Include="CSS\Homepage.css" />
     <Content Include="CSS\Style.css" />
     <Content Include="Model\KpopZtationModel.Context.tt">
@@ -250,7 +251,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Images\" />
+    <Folder Include="Images\Album\" />
+    <Folder Include="Images\Artist\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

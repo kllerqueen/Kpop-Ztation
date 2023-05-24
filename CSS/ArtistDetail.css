@@ -1,0 +1,17 @@
+﻿body {
+}
+
+.list {
+    display: inline-block;
+    margin: 10px;
+    vertical-align: top;
+}
+
+.ad-image {
+    height: 320px;
+    width: 320px;
+}
+
+/*.list:hover{
+    background-color: #6D5D6E;
+}*/

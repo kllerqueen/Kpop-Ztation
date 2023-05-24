@@ -16,18 +16,18 @@
 
     <asp:Label ID="Label3" runat="server" Text="Artist Album Details"></asp:Label> <br />
 
-     <%--<asp:ListView ID="ArtistListView" runat="server">
+     <asp:ListView ID="AlbumListView" runat="server">
             <ItemTemplate>
                 <div class="list">
                     <table>
-                        <tr><td><a href='../View/AlbumDetail.aspx'><img class="home-image" src='<%# "/" +  Eval("ArtistImage") %>' /></a></td></tr>
-                        <tr><td><asp:Label ID="Label2" runat="server" Text='<%# Eval("ArtistName") %>'></asp:Label></td></tr>
+                        <tr><td><a href='../View/AlbumDetail.aspx'><img class="ad-image" src='' /></a></td></tr>
+                        <tr><td><asp:Label ID="Label2" runat="server" Text="Album Name"></asp:Label></td></tr>
                         <tr><td><asp:Label ID="Label4" runat="server" Text="Price"></asp:Label></td></tr>
                         <tr><td><asp:Label ID="Label5" runat="server" Text="Description"></asp:Label></td></tr>
                     </table>
                 </div>
             </ItemTemplate>
-        </asp:ListView>   --%>
+        </asp:ListView>   
 
     
 

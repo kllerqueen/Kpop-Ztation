@@ -11,7 +11,7 @@ namespace Kpop_Ztation.View
 {
     public partial class Homepage : System.Web.UI.Page
     {
-        //KpopZtationDatabaseEntities1 db = new KpopZtationDatabaseEntities1();
+        KpopZtationDatabaseEntities1 db = new KpopZtationDatabaseEntities1();
         private void updateListView()
         {
             ArtistListView.DataSource = ArtistRepository.GetAllArtist();
@@ -47,6 +47,17 @@ namespace Kpop_Ztation.View
         protected void ArtistGridView_SelectedIndexChanged(object sender, EventArgs e)
         {
             Response.Redirect("../View/ArtistDetail.aspx");
+        }
+        public bool checkRole()
+        {
+            String user = Session["User"].ToString();
+            Customer data = (from dat in db.Customers where dat.CustomerEmail.Equals(user) select dat).FirstOrDefault();
+
+            if (data.CustomerRole.Equals("Admin"))
+            {
+                return true;
+            }
+            return false;
         }
 
     }

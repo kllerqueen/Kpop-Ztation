@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.IO;
 
 namespace Kpop_Ztation.View
 {
@@ -22,10 +23,13 @@ namespace Kpop_Ztation.View
         {
             string Name = artistNameTxt.Text;
             string Filename = ImageUpload.PostedFile.FileName;
-            string Filepath = "Images/" + ImageUpload.FileName;
-            ImageUpload.PostedFile.SaveAs(Server.MapPath("~/Images/") + Filename);
+            string Filepath = "/Images/Artist/" + ImageUpload.FileName;
+            string imageExtension = Path.GetExtension(Filename).ToLower();
+            int fileSize = ImageUpload.PostedFile.ContentLength;
 
-            String labelText = ArtistController.CreateArtist(Name, Filepath);
+            ImageUpload.PostedFile.SaveAs(Server.MapPath("~/Images/Artist/") + Filename);
+
+            String labelText = ArtistController.CreateArtist(Name, Filepath, imageExtension, fileSize);
             errorTxt.Text = labelText;
         }
     }

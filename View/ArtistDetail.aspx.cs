@@ -26,7 +26,7 @@ namespace Kpop_Ztation.View
                     int artistID = int.Parse(ID);
                     Artist artist = ArtistRepository.GetArtistByID(artistID);
 
-                    artistImage.ImageUrl = "/" + artist.ArtistImage;
+                    artistImage.ImageUrl = artist.ArtistImage;
                     artistName.Text = artist.ArtistName;
                 }
             }
