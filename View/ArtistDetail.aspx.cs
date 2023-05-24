@@ -12,6 +12,11 @@ namespace Kpop_Ztation.View
     public partial class ArtistDetail : System.Web.UI.Page
     {
         KpopZtationDatabaseEntities1 db = new KpopZtationDatabaseEntities1();
+        private void updateListView()
+        {
+            AlbumListView.DataSource = AlbumRepository.GetAllAlbums();
+            AlbumListView.DataBind();
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["User"] == null)
@@ -28,6 +33,8 @@ namespace Kpop_Ztation.View
 
                     artistImage.ImageUrl = artist.ArtistImage;
                     artistName.Text = artist.ArtistName;
+
+                    updateListView();
                 }
             }
         }

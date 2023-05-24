@@ -24,5 +24,7 @@
     <asp:Label ID="Label5" runat="server" Text="Image"></asp:Label> &nbsp
     <asp:FileUpload ID="ImageUpload" runat="server" /> <br />
 
+    <asp:Label ID="errorTxt" runat="server" Text=""></asp:Label>
+
     <asp:Button ID="InsertAlbumButton" runat="server" Text="Insert" OnClick="InsertAlbumButton_Click" />
 </asp:Content>

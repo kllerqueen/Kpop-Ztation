@@ -20,10 +20,10 @@
             <ItemTemplate>
                 <div class="list">
                     <table>
-                        <tr><td><a href='../View/AlbumDetail.aspx'><img class="ad-image" src='' /></a></td></tr>
-                        <tr><td><asp:Label ID="Label2" runat="server" Text="Album Name"></asp:Label></td></tr>
-                        <tr><td><asp:Label ID="Label4" runat="server" Text="Price"></asp:Label></td></tr>
-                        <tr><td><asp:Label ID="Label5" runat="server" Text="Description"></asp:Label></td></tr>
+                        <tr><td><a href='../View/AlbumDetail.aspx'><img class="ad-image" src='<%# Eval("AlbumImage") %>' /></a></td></tr>
+                        <tr><td><asp:Label ID="Label2" runat="server" Text='<%# Eval("AlbumName") %>'></asp:Label></td></tr>
+                        <tr><td><asp:Label ID="Label4" runat="server" Text='<%# Eval("AlbumPrice") %>'></asp:Label></td></tr>
+                        <tr><td><asp:Label ID="Label5" runat="server" Text='<%# Eval("AlbumDescription") %>'></asp:Label></td></tr>
                     </table>
                 </div>
             </ItemTemplate>

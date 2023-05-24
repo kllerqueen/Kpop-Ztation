@@ -26,5 +26,13 @@ namespace Kpop_Ztation.Handler
             ArtistRepository.CreateArtist(Idol);
             return;
         }
+
+        public static void CreateAlbum(String Name, String Desc, int Price, int Stock, String Image)
+        {
+            Album Collection = AlbumFactory.CreateAlbum(Name, Desc, Price, Stock, Image);
+
+            AlbumRepository.CreateAlbum(Collection);
+            return;
+        }
     }
 }
