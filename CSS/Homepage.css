@@ -1,9 +1,15 @@
 ﻿body {
 }
 
-.list{
-    display:flex;
-    justify-content: space-between;
+.list {
+    display: inline-block;
+    margin: 10px;
+    vertical-align: top;
+}
+
+.home-image {
+    height : 320px;
+    width : 320px;
 }
 
 /*.list:hover{

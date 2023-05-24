@@ -69,3 +69,33 @@ ul li {
 .cta:hover{
     background-color: rgba(0, 136, 169, 0.8);
 }
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.footer-container h3, .footer-container p, .footer-container ul {
+    margin: 10px 0;
+}
+
+.social-icons li {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.social-icons a {
+    color: #333;
+}
+
+.social-icons a:hover {
+    color: #000;
+}
+
+.footer-container p span {
+    font-weight: bold;
+}

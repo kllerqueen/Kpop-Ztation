@@ -1,4 +1,5 @@
 ﻿using Kpop_Ztation.Model;
+using Kpop_Ztation.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +17,18 @@ namespace Kpop_Ztation.View
             if (Session["User"] == null)
             {
                 Response.Redirect("../View/LoginPage.aspx");
+            }
+            else
+            {
+                if(Request.QueryString["artistId"] != null)
+                {
+                    string ID = Request.QueryString["artistId"];
+                    int artistID = int.Parse(ID);
+                    Artist artist = ArtistRepository.GetArtistByID(artistID);
+
+                    artistImage.ImageUrl = "/" + artist.ArtistImage;
+                    artistName.Text = artist.ArtistName;
+                }
             }
         }
 

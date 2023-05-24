@@ -48,5 +48,6 @@ namespace Kpop_Ztation.View
         {
             Response.Redirect("../View/ArtistDetail.aspx");
         }
+
     }
 }
