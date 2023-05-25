@@ -8,9 +8,10 @@ namespace Kpop_Ztation.Factory
 {
     public class AlbumFactory
     {
-        public static Album CreateAlbum(String Name, String Desc, int Price, int Stock, String Image)
+        public static Album CreateAlbum(int ArtistID, String Name, String Desc, int Price, int Stock, String Image)
         {
             Album Collection = new Album();
+            Collection.ArtistID = ArtistID;
             Collection.AlbumName = Name;
             Collection.AlbumDescription = Desc;
             Collection.AlbumPrice = Price;

@@ -60,5 +60,14 @@ namespace Kpop_Ztation.View
             return false;
         }
 
+        protected void artistUpdateButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("../View/UpdateArtist.aspx");
+        }
+
+        protected void artistDeleteButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

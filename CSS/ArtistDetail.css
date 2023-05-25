@@ -12,6 +12,11 @@
     width: 320px;
 }
 
+.artistImage{
+    height: 500px;
+    width: 500px;
+}
+
 /*.list:hover{
     background-color: #6D5D6E;
 }*/

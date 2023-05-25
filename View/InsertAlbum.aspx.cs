@@ -16,11 +16,15 @@ namespace Kpop_Ztation.View
             if (Session["User"] == null)
             {
                 Response.Redirect("../View/LoginPage.aspx");
-            }
+            }            
         }
+
 
         protected void InsertAlbumButton_Click(object sender, EventArgs e)
         {
+            String ID = Request.QueryString["param"];
+            int ArtistID = int.Parse(ID);
+
             string Name = nameTxt.Text;
             string Desc = descTxt.Text;
             int Price = int.Parse(priceTxt.Text);
@@ -33,7 +37,7 @@ namespace Kpop_Ztation.View
 
             ImageUpload.PostedFile.SaveAs(Server.MapPath("~/Images/Album/") + Filename);
 
-            string labelText = AlbumController.CreateAlbum(Name, Desc, Price, Stock, Filepath, imageExtension, fileSize);
+            string labelText = AlbumController.CreateAlbum(ArtistID, Name, Desc, Price, Stock, Filepath, imageExtension, fileSize);
             errorTxt.Text = labelText;
         }
     }

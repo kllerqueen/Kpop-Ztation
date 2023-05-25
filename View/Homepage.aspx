@@ -21,7 +21,8 @@
                     <table>
                         <tr><td><a href='<%# "../View/ArtistDetail.aspx?artistId=" + Eval("ArtistID") %>'><img class="home-image" src='<%# Eval("ArtistImage") %>' /></a></td></tr>
                         <tr><td><asp:Label ID="Label2" runat="server" Text='<%# Eval("ArtistName") %>'></asp:Label></td></tr>
-                    
+                        <tr><td><asp:Button ID="artistUpdateButton" runat="server" Text="Update Artist" OnClick="artistUpdateButton_Click" /></td></tr>
+                        <tr><td><asp:Button ID="artistDeleteButton" runat="server" Text="Delete Artist" OnClick="artistDeleteButton_Click" /></td></tr>
                     </table>
                 </div>
             </ItemTemplate>

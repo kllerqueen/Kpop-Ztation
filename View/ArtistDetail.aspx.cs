@@ -41,7 +41,8 @@ namespace Kpop_Ztation.View
 
         protected void InsertAlbumButton_Click(object sender, EventArgs e)
         {
-            Response.Redirect("../View/InsertAlbum.aspx");
+            string ID = Request.QueryString["artistId"];            
+            Response.Redirect("../View/InsertAlbum.aspx?param=" + ID);
         }
 
         public bool checkRole()
@@ -54,6 +55,16 @@ namespace Kpop_Ztation.View
                 return true;
             }
             return false;
+        }
+
+        protected void AlbumUpdateButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void AlbumDeleteButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -3,7 +3,10 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="Stylesheets" runat="server">
+    <%--<link href="../CSS/ArtistDetail.css" rel="stylesheet" runat="server"/>--%>
+    <link href="../CSS/Style.css" rel="stylesheet" runat="server"/>
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="WebsiteContent" runat="server">
+    <h1>Album Detail</h1>
 </asp:Content>

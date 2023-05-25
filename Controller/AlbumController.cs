@@ -8,7 +8,7 @@ namespace Kpop_Ztation.Controller
 {
     public class AlbumController
     {
-        public static String CreateAlbum(String Name, String Desc, int Price, int Stock, String Image, String imageExtension, int fileSize)
+        public static String CreateAlbum(int ArtistID, String Name, String Desc, int Price, int Stock, String Image, String imageExtension, int fileSize)
         {
             if(Functions.CheckEmpty(Name) || Functions.CheckEmpty(Desc))
             {
@@ -46,7 +46,7 @@ namespace Kpop_Ztation.Controller
                 return "Image can not be larger than 2MB";
             }
 
-            AccountHandler.CreateAlbum(Name, Desc, Price, Stock, Image);
+            AccountHandler.CreateAlbum(ArtistID, Name, Desc, Price, Stock, Image);
             return "Album succesfully added";
         }
     }

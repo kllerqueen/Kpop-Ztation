@@ -3,7 +3,7 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="Stylesheets" runat="server">
-     <link href="../CSS/Homepage.css" rel="stylesheet" runat="server"/>
+     <link href="../CSS/ArtistDetail.css" rel="stylesheet" runat="server"/>
     <link href="../CSS/Style.css" rel="stylesheet" runat="server"/>
 
 </asp:Content>
@@ -24,6 +24,8 @@
                         <tr><td><asp:Label ID="Label2" runat="server" Text='<%# Eval("AlbumName") %>'></asp:Label></td></tr>
                         <tr><td><asp:Label ID="Label4" runat="server" Text='<%# Eval("AlbumPrice") %>'></asp:Label></td></tr>
                         <tr><td><asp:Label ID="Label5" runat="server" Text='<%# Eval("AlbumDescription") %>'></asp:Label></td></tr>
+                        <tr><td><asp:Button ID="AlbumUpdateButton" runat="server" Text="Update Album" OnClick="AlbumUpdateButton_Click" /></td></tr>
+                        <tr><td><asp:Button ID="AlbumDeleteButton" runat="server" Text="DeleteAlbum" OnClick="AlbumDeleteButton_Click" /></td></tr>
                     </table>
                 </div>
             </ItemTemplate>
@@ -34,6 +36,7 @@
     <div>
         <%if (checkRole())
         {  %>
+        <%--<a href="../View/InsertAlbum.aspx">Insert Album</a>--%>
         <asp:Button ID="InsertAlbumButton" runat="server" Text="Insert Album" OnClick="InsertAlbumButton_Click" />   <%
         }  %>
     </div>

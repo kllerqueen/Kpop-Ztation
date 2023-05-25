@@ -27,9 +27,9 @@ namespace Kpop_Ztation.Handler
             return;
         }
 
-        public static void CreateAlbum(String Name, String Desc, int Price, int Stock, String Image)
+        public static void CreateAlbum(int ArtistID, String Name, String Desc, int Price, int Stock, String Image)
         {
-            Album Collection = AlbumFactory.CreateAlbum(Name, Desc, Price, Stock, Image);
+            Album Collection = AlbumFactory.CreateAlbum(ArtistID, Name, Desc, Price, Stock, Image);
 
             AlbumRepository.CreateAlbum(Collection);
             return;
