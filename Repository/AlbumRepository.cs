@@ -15,9 +15,15 @@ namespace Kpop_Ztation.Repository
             db.SaveChanges();
             return;
         }
-        public static List<Album> GetAllAlbums()
+        public static List<Album> GetRelevantAlbums(int ID)
         {
-            return db.Albums.ToList();
+            List<Album> ArtistAlbums = GetAlbumByArtistID(ID);
+            return ArtistAlbums;
+        }
+
+        public static List<Album> GetAlbumByArtistID(int ID)
+        { 
+            return (from u in db.Albums where ID.Equals(u.ArtistID) select u).ToList();
         }
     }
 }

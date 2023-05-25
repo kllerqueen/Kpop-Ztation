@@ -14,7 +14,9 @@ namespace Kpop_Ztation.View
         KpopZtationDatabaseEntities1 db = new KpopZtationDatabaseEntities1();
         private void updateListView()
         {
-            AlbumListView.DataSource = AlbumRepository.GetAllAlbums();
+            string ID = Request.QueryString["artistId"];
+            int artistID = int.Parse(ID);
+            AlbumListView.DataSource = AlbumRepository.GetRelevantAlbums(artistID);
             AlbumListView.DataBind();
         }
         protected void Page_Load(object sender, EventArgs e)
