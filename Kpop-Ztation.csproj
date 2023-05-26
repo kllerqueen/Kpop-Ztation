@@ -101,6 +101,7 @@
     <Content Include="View\LoginPage.aspx" />
     <Content Include="View\RegisterPage.aspx" />
     <Content Include="View\TransactionPage.aspx" />
+    <Content Include="View\UpdateAlbum.aspx" />
     <Content Include="View\UpdateArtist.aspx" />
     <Content Include="View\UpdateProfile.aspx" />
     <Content Include="Web.config" />
@@ -220,6 +221,13 @@
     </Compile>
     <Compile Include="View\TransactionPage.aspx.designer.cs">
       <DependentUpon>TransactionPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\UpdateAlbum.aspx.cs">
+      <DependentUpon>UpdateAlbum.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\UpdateAlbum.aspx.designer.cs">
+      <DependentUpon>UpdateAlbum.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\UpdateArtist.aspx.cs">
       <DependentUpon>UpdateArtist.aspx</DependentUpon>

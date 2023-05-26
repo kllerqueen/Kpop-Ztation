@@ -61,12 +61,14 @@ namespace Kpop_Ztation.View
 
         protected void AlbumUpdateButton_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("../View/UpdateAlbum.aspx");
         }
 
         protected void AlbumDeleteButton_Click(object sender, EventArgs e)
         {
 
         }
+
+        
     }
 }

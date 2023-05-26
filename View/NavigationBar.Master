@@ -64,21 +64,24 @@
             </asp:ContentPlaceHolder>
         </div>
 
-       <div class="footer-container">
-            <footer>
-                <h3>KpopZtation</h3>
-                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris a sagittis mauris, sed suscipit lectus.</p>
-                   <ul class="social-icons">
-                       <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                       <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                       <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-                       <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                       <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                   </ul>
+       <%if (Session["User"] != null) 
+           { %>
+            <div class="footer-container">
+                <footer>
+                    <h3>KpopZtation</h3>
+                       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris a sagittis mauris, sed suscipit lectus.</p>
+                       <ul class="social-icons">
+                           <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                           <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                           <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                           <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                           <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                       </ul>
 
-                   <p>Lorem ipsum dolor sit amet, <span>consectetur</span></p>
-            </footer>
-        </div>
+                       <p>Copyright &#169 2023 All Rights Reserved</p>
+                </footer>
+            </div>
+        <%} %>
 
     </form>
 </body>

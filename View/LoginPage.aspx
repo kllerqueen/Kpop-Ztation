@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="WebsiteContent" runat="server">
-    <asp:Label ID="Label6" runat="server" Text="Login Page"></asp:Label>
+    <h1>Login Page</h1>
     
     <br />
     <asp:Label ID="Label1" runat="server" Text="Email"></asp:Label> &nbsp

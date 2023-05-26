@@ -15,31 +15,13 @@ namespace Kpop_Ztation.View
     {
 
         /// <summary>
-        /// Label1 control.
+        /// noLogInlbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
-
-        /// <summary>
-        /// testLbl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label testLbl;
-
-        /// <summary>
-        /// ArtistListView control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView ArtistListView;
+        protected global::System.Web.UI.WebControls.Literal noLogInlbl;
 
         /// <summary>
         /// InsertArtistButton control.
@@ -49,5 +31,23 @@ namespace Kpop_Ztation.View
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button InsertArtistButton;
+
+        /// <summary>
+        /// AlbumDetailButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button AlbumDetailButton;
+
+        /// <summary>
+        /// ArtistListView control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListView ArtistListView;
     }
 }

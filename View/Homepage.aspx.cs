@@ -24,7 +24,7 @@ namespace Kpop_Ztation.View
 
             if (Session["User"] == null)
             {
-                Response.Redirect("../View/LoginPage.aspx");
+                noLogInlbl.Text = "<h1>Please log in to view the website's contents.</h1>";
             }            
             else
             {
@@ -68,6 +68,11 @@ namespace Kpop_Ztation.View
         protected void artistDeleteButton_Click(object sender, EventArgs e)
         {
 
+        }
+
+        protected void AlbumDetailButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("../View/AlbumDetail.aspx");
         }
     }
 }
