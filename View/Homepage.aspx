@@ -10,7 +10,9 @@
 
 <asp:Content ID ="Content3" ContentPlaceHolderID="WebsiteContent" runat="server">
     <%if(Session["User"] == null) { %>
-    <asp:Literal ID="noLogInlbl" runat="server"></asp:Literal>
+        <div class="homepage-restrict">
+            <h1>Please log in to view the website's contents</h1>
+        </div>
     <%} %>
 
     <%else{ %>

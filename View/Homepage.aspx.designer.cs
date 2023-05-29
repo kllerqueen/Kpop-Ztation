@@ -15,15 +15,6 @@ namespace Kpop_Ztation.View
     {
 
         /// <summary>
-        /// noLogInlbl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal noLogInlbl;
-
-        /// <summary>
         /// InsertArtistButton control.
         /// </summary>
         /// <remarks>
@@ -31,15 +22,6 @@ namespace Kpop_Ztation.View
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button InsertArtistButton;
-
-        /// <summary>
-        /// AlbumDetailButton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button AlbumDetailButton;
 
         /// <summary>
         /// ArtistListView control.

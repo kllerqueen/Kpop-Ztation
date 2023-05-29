@@ -1,4 +1,13 @@
-﻿body {
+﻿.homepage-restrict{
+    display: flex;
+    justify-content: center;    
+}
+
+.homepage-restrict h1 {
+    font-family: Cabin, sans-serif;
+    font-weight: 700;
+    font-size: 27px;
+    color: #0e1111;
 }
 
 .list {

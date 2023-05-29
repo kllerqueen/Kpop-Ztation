@@ -21,7 +21,7 @@ namespace Kpop_Ztation.View
         {            
             if (Session["User"] == null)
             {
-                noLogInlbl.Text = "<h1>Please log in to view the website's contents.</h1>";
+               
             }            
             else
             {
