@@ -18,10 +18,7 @@ namespace Kpop_Ztation.View
             ArtistListView.DataBind();
         }
         protected void Page_Load(object sender, EventArgs e)
-        {
-            //String user = Session["User"].ToString();
-            //Customer data = (from dat in db.Customers where dat.CustomerEmail.Equals(user) select dat).FirstOrDefault();
-
+        {            
             if (Session["User"] == null)
             {
                 noLogInlbl.Text = "<h1>Please log in to view the website's contents.</h1>";
@@ -68,11 +65,6 @@ namespace Kpop_Ztation.View
         protected void artistDeleteButton_Click(object sender, EventArgs e)
         {
 
-        }
-
-        protected void AlbumDetailButton_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("../View/AlbumDetail.aspx");
-        }
+        }        
     }
 }

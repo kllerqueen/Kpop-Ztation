@@ -20,12 +20,15 @@
             <ItemTemplate>
                 <div class="list">
                     <table>
-                        <tr><td><a href='#'><img class="ad-image" src='<%# Eval("AlbumImage") %>' /></a></td></tr>
-                        <tr><td><asp:Label ID="Label2" runat="server" Text='<%# Eval("AlbumName") %>'></asp:Label></td></tr>
-                        <tr><td><asp:Label ID="Label4" runat="server" Text='<%# Eval("AlbumPrice") %>'></asp:Label></td></tr>
-                        <tr><td><asp:Label ID="Label5" runat="server" Text='<%# Eval("AlbumDescription") %>'></asp:Label></td></tr>
+                        <tr><td><a href='<%# "../View/AlbumDetail.aspx?albumId=" + Eval("AlbumID") %>'><img class="ad-image" src='<%# Eval("AlbumImage") %>' /></a></td></tr>
+                        <tr><td><asp:Label ID="Label2" runat="server" Text='<%# Eval("AlbumName") %>'></asp:Label></td></tr>                        
+                        <tr><td><asp:Label ID="Label5" runat="server" Text='<%# Eval("AlbumDescription") %>'></asp:Label></td></tr>                        
+                        <tr><td><asp:Label ID="Label4" runat="server" Text='<%#Eval("AlbumPrice") %>'></asp:Label></td></tr>
+                        <%if (checkRole())
+                            { %>
                         <tr><td><asp:Button ID="AlbumUpdateButton" runat="server" Text="Update Album" OnClick="AlbumUpdateButton_Click" /></td></tr>
                         <tr><td><asp:Button ID="AlbumDeleteButton" runat="server" Text="DeleteAlbum" OnClick="AlbumDeleteButton_Click" /></td></tr>
+                        <%} %>
                     </table>
                 </div>
             </ItemTemplate>

@@ -16,7 +16,9 @@ namespace Kpop_Ztation.View
         {
             string ID = Request.QueryString["artistId"];
             int artistID = int.Parse(ID);
-            AlbumListView.DataSource = AlbumRepository.GetRelevantAlbums(artistID);
+            List<Album> ArtistAlbums = AlbumRepository.GetAlbumByArtistID(artistID);
+            AlbumListView.DataSource = ArtistAlbums;
+            //AlbumListView.DataSource = AlbumRepository.GetRelevantAlbums(artistID);
             AlbumListView.DataBind();
         }
         protected void Page_Load(object sender, EventArgs e)

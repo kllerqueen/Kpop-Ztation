@@ -20,10 +20,9 @@ namespace Kpop_Ztation.Repository
         {
             return db.Albums.ToList();
         }
-        public static List<Album> GetRelevantAlbums(int ID)
+        public static Album GetAlbumByAlbumID(int ID)
         {
-            List<Album> ArtistAlbums = GetAlbumByArtistID(ID);
-            return ArtistAlbums;
+            return (from u in db.Albums where ID.Equals(u.AlbumID) select u).FirstOrDefault();            
         }
 
         public static List<Album> GetAlbumByArtistID(int ID)
