@@ -11,7 +11,7 @@
     background-color: #24252A;
 }
 
-li, a, button, footer{
+.navbar-link a, button, footer{
     font-family: Montserrat, sans-serif;
     font-weight: 500;
     font-size: 16px;

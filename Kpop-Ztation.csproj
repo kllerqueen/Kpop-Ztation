@@ -81,6 +81,7 @@
     </Content>
     <Content Include="CSS\ArtistDetail.css" />
     <Content Include="CSS\Homepage.css" />
+    <Content Include="CSS\LoginRegister.css" />
     <Content Include="CSS\Style.css" />
     <Content Include="Model\KpopZtationModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
