@@ -49,5 +49,5 @@ namespace Kpop_Ztation.Controller
             AccountHandler.CreateAlbum(ArtistID, Name, Desc, Price, Stock, Image);
             return "Album succesfully added";
         }
-    }
+    }    
 }

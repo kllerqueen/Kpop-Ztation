@@ -1,4 +1,5 @@
-﻿using Kpop_Ztation.Model;
+﻿using Kpop_Ztation.Handler;
+using Kpop_Ztation.Model;
 using Kpop_Ztation.Repository;
 using System;
 using System.Collections.Generic;
@@ -55,16 +56,23 @@ namespace Kpop_Ztation.View
                 return true;
             }
             return false;
-        }
+        }        
 
-        protected void artistUpdateButton_Click(object sender, EventArgs e)
+        protected void deleteButton_Click(object sender, EventArgs e)
         {
-            Response.Redirect("../View/UpdateArtist.aspx");
-        }
+            LinkButton deleteButton = (LinkButton)sender;
+            string ID = deleteButton.CommandArgument;
+            int artistID = int.Parse(ID);
 
-        protected void artistDeleteButton_Click(object sender, EventArgs e)
-        {
+            if(AccountHandler.CheckArtistAlbum(artistID))
+            {
+                AccountHandler.DeleteAllAlbum(artistID);
+                db.SaveChanges();
+            }
 
+            AccountHandler.DeleteArtist(artistID);
+            db.SaveChanges();
+            updateListView();
         }        
     }
 }

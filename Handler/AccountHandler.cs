@@ -34,5 +34,32 @@ namespace Kpop_Ztation.Handler
             AlbumRepository.CreateAlbum(Collection);
             return;
         }
+
+        public static void DeleteAlbum(int AlbumID)
+        {
+            Album album = AlbumRepository.GetAlbumByAlbumID(AlbumID);
+            AlbumRepository.RemoveAlbum(album);
+        }
+
+        public static void DeleteAllAlbum(int ArtistID)
+        {
+            List<Album> albums = AlbumRepository.GetAllAlbumByArtistID(ArtistID);
+            AlbumRepository.RemoveAllAlbums(albums);
+        }
+        
+        public static void DeleteArtist(int ArtistID)
+        {
+            Artist artist = ArtistRepository.GetArtistByID(ArtistID);
+            ArtistRepository.RemoveArtist(artist);
+        }
+
+        public static bool CheckArtistAlbum(int ArtistID)
+        {
+            if(AlbumRepository.GetAlbumByArtistID(ArtistID) != null)
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Kpop_Ztation.Model;
+﻿using Kpop_Ztation.Handler;
+using Kpop_Ztation.Model;
 using Kpop_Ztation.Repository;
 using System;
 using System.Collections.Generic;
@@ -16,7 +17,7 @@ namespace Kpop_Ztation.View
         {
             string ID = Request.QueryString["artistId"];
             int artistID = int.Parse(ID);
-            List<Album> ArtistAlbums = AlbumRepository.GetAlbumByArtistID(artistID);
+            List<Album> ArtistAlbums = AlbumRepository.GetAllAlbumByArtistID(artistID);
             AlbumListView.DataSource = ArtistAlbums;
             //AlbumListView.DataSource = AlbumRepository.GetRelevantAlbums(artistID);
             AlbumListView.DataBind();
@@ -61,16 +62,15 @@ namespace Kpop_Ztation.View
             return false;
         }
 
-        protected void AlbumUpdateButton_Click(object sender, EventArgs e)
+        protected void deleteButton_Click(object sender, EventArgs e)
         {
-            Response.Redirect("../View/UpdateAlbum.aspx");
+            LinkButton deleteButton = (LinkButton)sender;
+            string ID = deleteButton.CommandArgument;
+            int albumID = int.Parse(ID);
+            AccountHandler.DeleteAlbum(albumID);
+            db.SaveChanges();
+
+            updateListView();
         }
-
-        protected void AlbumDeleteButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        
     }
 }

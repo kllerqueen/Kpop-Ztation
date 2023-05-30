@@ -15,19 +15,32 @@ namespace Kpop_Ztation.Repository
             db.SaveChanges();
             return;
         }
-
-        public static List<Album> GetAllAlbums()
-        {
-            return db.Albums.ToList();
-        }
+       
         public static Album GetAlbumByAlbumID(int ID)
         {
             return (from u in db.Albums where ID.Equals(u.AlbumID) select u).FirstOrDefault();            
         }
 
-        public static List<Album> GetAlbumByArtistID(int ID)
+        public static Album GetAlbumByArtistID(int ID)
+        {
+            return (from u in db.Albums where ID.Equals(u.ArtistID) select u).FirstOrDefault();
+        }
+
+        public static List<Album> GetAllAlbumByArtistID(int ID)
         { 
             return (from u in db.Albums where ID.Equals(u.ArtistID) select u).ToList();
+        }
+
+        public static int RemoveAlbum(Album album)
+        {
+            db.Albums.Remove(album);
+            return db.SaveChanges();
+        }
+
+        public static int RemoveAllAlbums(List<Album> albums)
+        {
+            db.Albums.RemoveRange(albums);
+            return db.SaveChanges();
         }
     }
 }
