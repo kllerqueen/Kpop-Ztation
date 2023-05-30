@@ -1,4 +1,5 @@
 ﻿using Kpop_Ztation.Model;
+using Kpop_Ztation.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +19,18 @@ namespace Kpop_Ztation.Factory
             User.CustomerAddress = Address;
             User.CustomerRole = "User";
 
+            return User;
+        }
+
+        public static Customer UpdateProfile(String Name, String Email, String Password, String Gender, String Address)
+        {
+            Customer User = AccountRepository.GetUser(Email, Password);
+            User.CustomerName = Name;
+            User.CustomerEmail = Email;
+            User.CustomerPassword = Password;
+            User.CustomerGender = Gender;
+            User.CustomerAddress = Address;
+            
             return User;
         }
     }

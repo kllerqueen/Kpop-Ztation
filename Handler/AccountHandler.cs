@@ -1,6 +1,7 @@
 ﻿using Kpop_Ztation.Factory;
 using Kpop_Ztation.Model;
 using Kpop_Ztation.Repository;
+using Kpop_Ztation.Controller;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +20,16 @@ namespace Kpop_Ztation.Handler
             return;
         }
 
+        public static void UpdateProfile(String Name, String Email, String Password, String Gender, String Address)
+        {
+            
+            Customer User = AccountFactory.UpdateProfile(Name, Email, Password, Gender, Address);
+
+            AccountRepository.UpdateProfile(User);
+            
+            return;
+        }
+
         public static void CreateArtist(String Name, String Image)
         {
             Artist Idol = ArtistFactory.CreateArtist(Name, Image);
@@ -34,6 +45,8 @@ namespace Kpop_Ztation.Handler
             AlbumRepository.CreateAlbum(Collection);
             return;
         }
+
+        
 
         public static void DeleteAlbum(int AlbumID)
         {

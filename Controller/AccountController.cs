@@ -20,7 +20,7 @@ namespace Kpop_Ztation.Controller
                 return "Invalid input";
             }
             AccountHandler.CreateAccount(Name, Email, Password, Gender, Address);
-            return "Account Successfuly Created.";
+            return "Account Successfully Created.";
         }
 
         public static bool Login(String Email, String Password)
@@ -30,6 +30,21 @@ namespace Kpop_Ztation.Controller
                 return false;
             }
             return true;
-        }       
+        }
+        
+        public static String UpdateProfile(String Name, String Email, String Password, String Gender, String Address)
+        {
+            if(Functions.CheckEmpty(Name) || Functions.CheckEmpty(Email) || Functions.CheckEmpty(Password) || Functions.CheckEmpty(Gender) || Functions.CheckEmpty(Address))
+            {
+                return "Please fill all fields";
+            }
+
+            if(Functions.CheckName(Name) || Functions.CheckEmail(Email) || Functions.CheckPassword(Password) || Functions.CheckAddress(Address))
+            {
+                return "Invalid input";
+            }
+            AccountHandler.UpdateProfile(Name, Email, Password, Gender, Address);
+            return "Account successfully updated.";
+        }
     }
 }

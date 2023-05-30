@@ -17,6 +17,12 @@ namespace Kpop_Ztation.Repository
             return;
         }
 
+        public static void UpdateProfile(Customer user)
+        { 
+            db.SaveChanges();
+            return;
+        }
+
         public static Customer GetUser(string Email, string Password)
         {
             return (from u in db.Customers where Email.Equals(u.CustomerEmail) && Password.Equals(u.CustomerPassword) select u).FirstOrDefault();

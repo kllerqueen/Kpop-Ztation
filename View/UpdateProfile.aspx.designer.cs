@@ -15,13 +15,13 @@ namespace Kpop_Ztation.View
     {
 
         /// <summary>
-        /// Label1 control.
+        /// nameLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.Label nameLabel;
 
         /// <summary>
         /// nameTxt control.
@@ -33,13 +33,13 @@ namespace Kpop_Ztation.View
         protected global::System.Web.UI.WebControls.TextBox nameTxt;
 
         /// <summary>
-        /// Label2 control.
+        /// emailLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
+        protected global::System.Web.UI.WebControls.Label emailLabel;
 
         /// <summary>
         /// emailTxt control.
@@ -51,13 +51,13 @@ namespace Kpop_Ztation.View
         protected global::System.Web.UI.WebControls.TextBox emailTxt;
 
         /// <summary>
-        /// Label3 control.
+        /// genderLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label3;
+        protected global::System.Web.UI.WebControls.Label genderLabel;
 
         /// <summary>
         /// GenderSelect control.
@@ -69,13 +69,13 @@ namespace Kpop_Ztation.View
         protected global::System.Web.UI.WebControls.RadioButtonList GenderSelect;
 
         /// <summary>
-        /// Label4 control.
+        /// addressLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label4;
+        protected global::System.Web.UI.WebControls.Label addressLabel;
 
         /// <summary>
         /// addressTxt control.
@@ -87,13 +87,13 @@ namespace Kpop_Ztation.View
         protected global::System.Web.UI.WebControls.TextBox addressTxt;
 
         /// <summary>
-        /// Label5 control.
+        /// passwordLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label5;
+        protected global::System.Web.UI.WebControls.Label passwordLabel;
 
         /// <summary>
         /// passwordTxt control.

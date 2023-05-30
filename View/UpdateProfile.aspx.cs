@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Kpop_Ztation.Controller;
 
 namespace Kpop_Ztation.View
 {
@@ -11,6 +12,19 @@ namespace Kpop_Ztation.View
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+        }
+
+        protected void updateProfile_Click(object sender, EventArgs e)
+        {
+            string Name = nameTxt.Text;
+            string Email = emailTxt.Text;
+            string Gender = GenderSelect.SelectedItem.Value.ToString();
+            string Address = addressTxt.Text;
+            string Password = passwordTxt.Text;
+
+            String labelText = AccountController.UpdateProfile(Name, Email, Password, Gender, Address);
+            errorTxt.Text = labelText;
 
         }
     }
