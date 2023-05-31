@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Text.RegularExpressions;
+using Kpop_Ztation.Model;
+using Kpop_Ztation.Repository;
 
 namespace Kpop_Ztation.Controller
 {
@@ -29,8 +31,9 @@ namespace Kpop_Ztation.Controller
         public static bool CheckEmail(String Email)
         {
             Regex emailRegex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$", RegexOptions.IgnoreCase);
+            Customer User = AccountRepository.GetEmail(Email);
 
-            if(!(emailRegex.IsMatch(Email)))
+            if(!(emailRegex.IsMatch(Email)) || User != null)
             {
                 return true;
             }

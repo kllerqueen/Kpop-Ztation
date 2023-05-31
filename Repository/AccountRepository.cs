@@ -27,5 +27,10 @@ namespace Kpop_Ztation.Repository
         {
             return (from u in db.Customers where Email.Equals(u.CustomerEmail) && Password.Equals(u.CustomerPassword) select u).FirstOrDefault();
         }
+
+        public static Customer GetEmail(string Email)
+        {
+            return (from u in db.Customers where Email.Equals(u.CustomerEmail) select u).FirstOrDefault();
+        }
     }
 }

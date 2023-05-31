@@ -21,12 +21,10 @@ namespace Kpop_Ztation.Handler
         }
 
         public static void UpdateProfile(String Name, String Email, String Password, String Gender, String Address)
-        {
-            
+        {            
             Customer User = AccountFactory.UpdateProfile(Name, Email, Password, Gender, Address);
 
-            AccountRepository.UpdateProfile(User);
-            
+            AccountRepository.UpdateProfile(User);            
             return;
         }
 

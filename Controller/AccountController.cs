@@ -15,9 +15,29 @@ namespace Kpop_Ztation.Controller
                 return "Please fill all fields";
             }
 
-            if(Functions.CheckName(Name) || Functions.CheckEmail(Email) || Gender.Equals("") || Functions.CheckAddress(Address) || Functions.CheckPassword(Password))
+            if(Functions.CheckName(Name))
             {
-                return "Invalid input";
+                return "Name must be between 5-50 characters";
+            }
+
+            if (Functions.CheckEmail(Email))
+            {
+                return "Email must be in the correct format and has not been used before.";
+            }
+
+            if(Gender.Equals(""))
+            {
+                return "Gender option must be selected";
+            }
+
+            if(Functions.CheckAddress(Address))
+            {
+                return "Address must end with 'Street'";
+            }
+
+            if(Functions.CheckPassword(Password))
+            {
+                return "Password must be alphanumeric";
             }
             AccountHandler.CreateAccount(Name, Email, Password, Gender, Address);
             return "Account Successfully Created.";
@@ -39,9 +59,29 @@ namespace Kpop_Ztation.Controller
                 return "Please fill all fields";
             }
 
-            if(Functions.CheckName(Name) || Functions.CheckEmail(Email) || Functions.CheckPassword(Password) || Functions.CheckAddress(Address))
+            if (Functions.CheckName(Name))
             {
-                return "Invalid input";
+                return "Name must be between 5-50 characters";
+            }
+
+            if (Functions.CheckEmail(Email))
+            {
+                return "Email must be in the correct format and has not been used before.";
+            }
+
+            if (Gender.Equals(""))
+            {
+                return "Gender option must be selected";
+            }
+
+            if (Functions.CheckAddress(Address))
+            {
+                return "Address must end with 'Street'";
+            }
+
+            if (Functions.CheckPassword(Password))
+            {
+                return "Password must be alphanumeric";
             }
             AccountHandler.UpdateProfile(Name, Email, Password, Gender, Address);
             return "Account successfully updated.";

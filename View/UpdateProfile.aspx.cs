@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Kpop_Ztation.Controller;
+using Kpop_Ztation.Model;
+using Kpop_Ztation.Repository;
 
 namespace Kpop_Ztation.View
 {
@@ -12,7 +14,11 @@ namespace Kpop_Ztation.View
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            //Customer User = AccountRepository.GetUser
+            if (Session["User"] == null)
+            {
+                Response.Redirect("../View/LoginPage.aspx");
+            }
         }
 
         protected void updateProfile_Click(object sender, EventArgs e)
