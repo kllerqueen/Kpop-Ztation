@@ -48,15 +48,15 @@ namespace Kpop_Ztation.View
         }
         public bool checkRole()
         {
-            String user = Session["User"].ToString();
-            Customer data = (from dat in db.Customers where dat.CustomerEmail.Equals(user) select dat).FirstOrDefault();
+            int ID = int.Parse(Session["User"].ToString());
+            Customer data = (from dat in db.Customers where dat.CustomerID.Equals(ID) select dat).FirstOrDefault();
 
             if (data.CustomerRole.Equals("Admin"))
             {
                 return true;
             }
             return false;
-        }        
+        }
 
         protected void deleteButton_Click(object sender, EventArgs e)
         {

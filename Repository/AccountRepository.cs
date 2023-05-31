@@ -23,9 +23,13 @@ namespace Kpop_Ztation.Repository
             return;
         }
 
-        public static Customer GetUser(string Email, string Password)
+        public static Customer GetUserByEmail(string Email, string Password)
         {
             return (from u in db.Customers where Email.Equals(u.CustomerEmail) && Password.Equals(u.CustomerPassword) select u).FirstOrDefault();
+        }
+        public static Customer GetUserByID(int ID)
+        {
+            return (from u in db.Customers where ID.Equals(u.CustomerID) select u).FirstOrDefault();
         }
 
         public static Customer GetEmail(string Email)

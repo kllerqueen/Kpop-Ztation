@@ -20,7 +20,7 @@ namespace Kpop_Ztation.Controller
                 return "Name must be between 5-50 characters";
             }
 
-            if (Functions.CheckEmail(Email))
+            if (Functions.CheckEmailFormat(Email) || Functions.CheckEmailUnique(Email))
             {
                 return "Email must be in the correct format and has not been used before.";
             }
@@ -52,7 +52,7 @@ namespace Kpop_Ztation.Controller
             return true;
         }
         
-        public static String UpdateProfile(String Name, String Email, String Password, String Gender, String Address)
+        public static String UpdateProfile(int ID, String Name, String Email, String Password, String Gender, String Address)
         {
             if(Functions.CheckEmpty(Name) || Functions.CheckEmpty(Email) || Functions.CheckEmpty(Password) || Functions.CheckEmpty(Gender) || Functions.CheckEmpty(Address))
             {
@@ -64,7 +64,7 @@ namespace Kpop_Ztation.Controller
                 return "Name must be between 5-50 characters";
             }
 
-            if (Functions.CheckEmail(Email))
+            if (Functions.CheckEmailFormat(Email))
             {
                 return "Email must be in the correct format and has not been used before.";
             }
@@ -83,7 +83,7 @@ namespace Kpop_Ztation.Controller
             {
                 return "Password must be alphanumeric";
             }
-            AccountHandler.UpdateProfile(Name, Email, Password, Gender, Address);
+            AccountHandler.UpdateProfile(ID, Name, Email, Password, Gender, Address);
             return "Account successfully updated.";
         }
     }

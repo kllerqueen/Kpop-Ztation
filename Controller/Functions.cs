@@ -28,12 +28,22 @@ namespace Kpop_Ztation.Controller
             return false;
         }
 
-        public static bool CheckEmail(String Email)
+        public static bool CheckEmailFormat(String Email)
         {
-            Regex emailRegex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$", RegexOptions.IgnoreCase);
+            Regex emailRegex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$", RegexOptions.IgnoreCase);            
+
+            if(!(emailRegex.IsMatch(Email)))
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public static bool CheckEmailUnique(String Email)
+        {
             Customer User = AccountRepository.GetEmail(Email);
 
-            if(!(emailRegex.IsMatch(Email)) || User != null)
+            if(User != null)
             {
                 return true;
             }

@@ -22,9 +22,9 @@ namespace Kpop_Ztation.Factory
             return User;
         }
 
-        public static Customer UpdateProfile(String Name, String Email, String Password, String Gender, String Address)
+        public static Customer UpdateProfile(int ID, String Name, String Email, String Password, String Gender, String Address)
         {
-            Customer User = AccountRepository.GetUser(Email, Password);
+            Customer User = AccountRepository.GetUserByID(ID);
             User.CustomerName = Name;
             User.CustomerEmail = Email;
             User.CustomerPassword = Password;
