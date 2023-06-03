@@ -1,4 +1,5 @@
-﻿using Kpop_Ztation.Model;
+﻿using Kpop_Ztation.Controller;
+using Kpop_Ztation.Model;
 using Kpop_Ztation.Repository;
 using System;
 using System.Collections.Generic;
@@ -36,7 +37,7 @@ namespace Kpop_Ztation.View
 
         protected void addCart_Click(object sender, EventArgs e)
         {
-
+            
         }
     }
 }
