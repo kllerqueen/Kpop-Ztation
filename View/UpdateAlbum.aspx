@@ -9,23 +9,25 @@
 
 <asp:Content ID="Content3" ContentPlaceHolderID="WebsiteContent" runat="server">
     <h1>Update Album</h1>
-
-    <asp:Label ID="Label1" runat="server" Text="Name"></asp:Label> &nbsp
-    <asp:TextBox ID="nameTxt" runat="server"></asp:TextBox> <br />
-
-    <asp:Label ID="Label2" runat="server" Text="Description"></asp:Label> &nbsp
-    <asp:TextBox ID="descTxt" runat="server"></asp:TextBox> <br />
-
-    <asp:Label ID="Label3" runat="server" Text="Price"></asp:Label> &nbsp
-    <asp:TextBox ID="priceTxt" runat="server"></asp:TextBox> <br />
-
-    <asp:Label ID="Label4" runat="server" Text="Stock"></asp:Label> &nbsp
-    <asp:TextBox ID="stockTxt" runat="server"></asp:TextBox> <br />
-
-    <asp:Label ID="Label5" runat="server" Text="Image"></asp:Label> &nbsp
-    <asp:FileUpload ID="ImageUpload" runat="server" /> <br />
-
-    <asp:Label ID="errorTxt" runat="server" Text=""></asp:Label>
-
-    <asp:Button ID="UpdateAlbumButton" runat="server" Text="Update" />
+    <div>
+        <asp:Label ID="lblMessage" runat="server" Text=""></asp:Label>
+        <br />
+        <asp:HiddenField ID="hdnAlbumID" runat="server" />
+        <label>Album Name:</label>
+        <asp:TextBox ID="txtAlbumName" runat="server"></asp:TextBox>
+        <br />
+        <label>Description:</label>
+        <asp:TextBox ID="txtDescription" runat="server"></asp:TextBox>
+        <br />
+        <label>Price:</label>
+        <asp:TextBox ID="txtPrice" runat="server"></asp:TextBox>
+        <br />
+        <label>Stock:</label>
+        <asp:TextBox ID="txtStock" runat="server"></asp:TextBox>
+        <br />
+        <label>Image:</label>
+        <asp:FileUpload ID="fileUploadImage" runat="server" />
+        <br />
+        <asp:Button ID="btnUpdate" runat="server" Text="Update" OnClick="btnUpdate_Click" />
+    </div>
 </asp:Content>
