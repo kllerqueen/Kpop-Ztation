@@ -1,6 +1,7 @@
 ﻿using Kpop_Ztation.Model;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 
@@ -29,6 +30,12 @@ namespace Kpop_Ztation.Repository
         public static List<Album> GetAllAlbumByArtistID(int ID)
         { 
             return (from u in db.Albums where ID.Equals(u.ArtistID) select u).ToList();
+        }
+
+        public static void UpdateAlbum(Album album)
+        {
+            db.Entry(album).State = EntityState.Modified;
+            db.SaveChanges();
         }
 
         public static int RemoveAlbum(Album album)
