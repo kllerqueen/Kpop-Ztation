@@ -14,10 +14,10 @@
         <h2>Register</h2>
 
         <div class="register-field">
-            <asp:Label ID="Label1" class="register-text" runat="server" Text="Name"></asp:Label> <br />
-            <asp:TextBox ID="nameTxt" runat="server"></asp:TextBox> <br />
+            <asp:Label ID="Label1" class="register-text" runat="server" Text="Name"></asp:Label>
+            <asp:TextBox ID="nameTxt" runat="server"></asp:TextBox>
 
-            <asp:Label ID="Label2" class="register-text" runat="server" Text="Email"></asp:Label> <br />
+            <asp:Label ID="Label2" class="register-text" runat="server" Text="Email"></asp:Label>
             <asp:TextBox ID="emailTxt" runat="server"></asp:TextBox> <br />
 
             <asp:Label ID="Label3" class="register-text" runat="server" Text="Gender"></asp:Label> 
@@ -26,14 +26,14 @@
                 <asp:ListItem>Female</asp:ListItem>
             </asp:RadioButtonList>
 
-            <asp:Label ID="Label4" class="register-text" runat="server" Text="Address"></asp:Label> <br />
-            <asp:TextBox ID="addressTxt" runat="server"></asp:TextBox> <br />
+            <asp:Label ID="Label4" class="register-text" runat="server" Text="Address"></asp:Label> 
+            <asp:TextBox ID="addressTxt" runat="server"></asp:TextBox> 
 
-            <asp:Label ID="Label5" class="register-text" runat="server" Text="Password"></asp:Label> <br />
+            <asp:Label ID="Label5" class="register-text" runat="server" Text="Password"></asp:Label> 
             <asp:TextBox ID="passwordTxt" runat="server" TextMode="Password"></asp:TextBox> <br />
             
             <asp:Label ID="errorTxt" runat="server" Text=""></asp:Label> <br />
-            <asp:Button ID="registerButton" class="registerButton" runat="server" Text="Register" OnClick="registerButton_Click" />
+            <asp:Button ID="registerButton" class="Button" runat="server" Text="Register" OnClick="registerButton_Click" />
         </div>
     </div>
 

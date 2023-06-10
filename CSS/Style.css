@@ -8,6 +8,38 @@
     
 }
 
+.header-text {
+    display: flex;
+    justify-content: center;
+
+    font-family: Cabin, sans-serif;
+    font-weight: 700;
+    font-size: 27px;
+    color: #0e1111;
+}
+
+.Button-Container{
+    display: flex;
+    justify-content: center;
+}
+
+.Button {
+    /*display: flex;*/
+    justify-content: center;
+
+    font-family: Montserrat, sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #edf0f1;
+    text-decoration: none;
+    padding: 9px 25px;
+    background-color: rgba(0,136,169,1);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
 .navbar-container, .footer-container{
     background-color: #24252A;
 }
