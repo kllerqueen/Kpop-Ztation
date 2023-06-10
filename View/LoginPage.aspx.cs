@@ -26,8 +26,7 @@ namespace Kpop_Ztation.View
             string Password = passwordTxt.Text;
             if (AccountController.Login(Email, Password))
             {
-                Customer u = AccountRepository.GetUserByEmail(Email, Password);
-                String CustomerID = u.CustomerID.ToString();
+                Customer u = AccountRepository.GetUserByEmail(Email, Password);                
                 if(emailTxt.Text.Equals("") || passwordTxt.Text.Equals(""))
                 {
                     errorText.Text = "Please fill all empty fields";
@@ -37,7 +36,8 @@ namespace Kpop_Ztation.View
                     errorText.Text = "User does not exist";
                 }
                 else
-                {                    
+                {
+                    String CustomerID = u.CustomerID.ToString();
                     Session["User"] = CustomerID;
                     Response.Redirect("../View/Homepage.aspx");
                 }
