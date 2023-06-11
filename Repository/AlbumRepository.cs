@@ -15,6 +15,12 @@ namespace Kpop_Ztation.Repository
             db.SaveChanges();
             return;
         }
+
+        public static void UpdateAlbum(Album Collection)
+        {
+            db.SaveChanges();
+            return;
+        }
        
         public static Album GetAlbumByAlbumID(int ID)
         {
@@ -31,12 +37,6 @@ namespace Kpop_Ztation.Repository
             return (from u in db.Albums where ID.Equals(u.ArtistID) select u).ToList();
         }
 
-        public static void UpdateAlbum(Album album)
-        {
-            db.Entry(album).State = EntityState.Modified;
-            db.SaveChanges();
-        }
-
         public static int RemoveAlbum(Album album)
         {
             db.Albums.Remove(album);
@@ -48,5 +48,6 @@ namespace Kpop_Ztation.Repository
             db.Albums.RemoveRange(albums);
             return db.SaveChanges();
         }
+        
     }
 }

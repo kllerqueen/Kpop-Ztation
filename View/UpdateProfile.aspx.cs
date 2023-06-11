@@ -18,7 +18,7 @@ namespace Kpop_Ztation.View
             {
                 Response.Redirect("../View/LoginPage.aspx");
             }
-            else
+            if (!IsPostBack)
             {
                 string UserID = Session["User"].ToString();
                 int ID = int.Parse(UserID);

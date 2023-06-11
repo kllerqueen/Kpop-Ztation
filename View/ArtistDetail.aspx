@@ -27,7 +27,7 @@
                         <tr><td><asp:Label ID="Label4" runat="server" Text='<%#Eval("AlbumPrice") %>'></asp:Label></td></tr>
                         <%if (checkRole())
                             { %>
-                        <tr><td><a class="listview-button" href="../View/UpdateAlbum.aspx">Update Album</a></td></tr>
+                        <tr><td><a class="listview-button" href='<%# "../View/UpdateAlbum.aspx?albumId=" + Eval("AlbumID") %>'>Update Album</a></td></tr>
                         <tr><td><asp:LinkButton ID="deleteButton" class="listview-button" OnClick="deleteButton_Click" CommandArgument='<%# Eval("AlbumID") %>' runat="server">Delete Album</asp:LinkButton></td></tr>                                                                                
                         <%} %>
                     </table>

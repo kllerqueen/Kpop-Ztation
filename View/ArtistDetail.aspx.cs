@@ -71,6 +71,6 @@ namespace Kpop_Ztation.View
             db.SaveChanges();
 
             updateListView();
-        }
+        }                
     }
 }

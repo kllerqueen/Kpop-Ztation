@@ -36,11 +36,27 @@ namespace Kpop_Ztation.Handler
             return;
         }
 
+        public static void UpdateArtist(int ID, String Name, String Image)
+        {
+            Artist Idol = ArtistFactory.UpdateArtist(ID, Name, Image);
+
+            ArtistRepository.UpdateArtist(Idol);
+            return;
+        }
+
         public static void CreateAlbum(int ArtistID, String Name, String Desc, int Price, int Stock, String Image)
         {
             Album Collection = AlbumFactory.CreateAlbum(ArtistID, Name, Desc, Price, Stock, Image);
 
             AlbumRepository.CreateAlbum(Collection);
+            return;
+        }
+
+        public static void UpdateAlbum(int ID, String Name, String Desc, int Price, int Stock, String Image)
+        {
+            Album Collection = AlbumFactory.UpdateAlbum(ID, Name, Desc, Price, Stock, Image);
+
+            AlbumRepository.UpdateAlbum(Collection);
             return;
         }
 

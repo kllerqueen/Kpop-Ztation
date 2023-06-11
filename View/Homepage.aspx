@@ -37,7 +37,7 @@
                             <tr><td><asp:Label ID="artistName" runat="server" Text='<%# Eval("ArtistName") %>'></asp:Label></td></tr>
                             <%if(checkRole())
                                 { %>
-                            <tr><td><a class="listview-button" href="../View/UpdateArtist.aspx">Update Artist</a></td></tr>
+                            <tr><td><a class="listview-button" href='<%# "../View/UpdateArtist.aspx?artistId=" + Eval("ArtistID") %>'>Update Artist</a></td></tr>
                             <tr><td><asp:LinkButton ID="deleteButton" class="listview-button" CommandArgument='<%#Eval("ArtistID") %>' OnClick="deleteButton_Click" runat="server">Delete Artist</asp:LinkButton></td></tr>                                                        
                             <%  }%>
                         </table>

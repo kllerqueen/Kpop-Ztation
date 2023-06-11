@@ -1,4 +1,5 @@
 ﻿using Kpop_Ztation.Model;
+using Kpop_Ztation.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,18 @@ namespace Kpop_Ztation.Factory
         {
             Album Collection = new Album();
             Collection.ArtistID = ArtistID;
+            Collection.AlbumName = Name;
+            Collection.AlbumDescription = Desc;
+            Collection.AlbumPrice = Price;
+            Collection.AlbumStock = Stock;
+            Collection.AlbumImage = Image;
+
+            return Collection;
+        }
+
+        public static Album UpdateAlbum(int ID, String Name, String Desc, int Price, int Stock, String Image)
+        {
+            Album Collection = AlbumRepository.GetAlbumByAlbumID(ID);            
             Collection.AlbumName = Name;
             Collection.AlbumDescription = Desc;
             Collection.AlbumPrice = Price;

@@ -11,6 +11,7 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="WebsiteContent" runat="server">
     <h1>Update Artist</h1>
 
+    <asp:Image ID="artistImage" runat="server" /> <br />
     <asp:Label ID="Label1" runat="server" Text="Name"></asp:Label> &nbsp
     <asp:TextBox ID="artistNameTxt" runat="server"></asp:TextBox> <br />
 
@@ -18,5 +19,5 @@
     <asp:FileUpload ID="ImageUpload" runat="server" /> <br />
 
     <asp:Label ID="errorTxt" runat="server" Text=""></asp:Label> <br />
-    <asp:Button ID="UpdateArtistButton" runat="server" Text="Update" />
+    <asp:Button ID="UpdateArtistButton" OnClick="UpdateArtistButton_Click" runat="server" Text="Update" />
 </asp:Content>

@@ -17,6 +17,12 @@ namespace Kpop_Ztation.Repository
             return;
         }
 
+        public static void UpdateArtist(Artist Idol)
+        {
+            db.SaveChanges();
+            return;
+        }
+
         public static List<Artist> GetAllArtist()
         {
             return db.Artists.ToList();

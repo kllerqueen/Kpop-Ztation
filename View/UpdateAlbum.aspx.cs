@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -24,7 +25,8 @@ namespace Kpop_Ztation.View
                 // Retrieve the album ID from the query string
                 if (Request.QueryString["albumID"] != null)
                 {
-                    int albumID = Convert.ToInt32(Request.QueryString["albumID"]);
+                    string ID= Request.QueryString["albumID"];
+                    int albumID = int.Parse(ID);
                     LoadAlbum(albumID);
                 }
             }
@@ -33,12 +35,13 @@ namespace Kpop_Ztation.View
         protected void LoadAlbum(int albumID)
         {
             // Get the album from the repository based on the ID
+            // Taruh di controller?
             Album album = AlbumRepository.GetAlbumByAlbumID(albumID);
 
             if (album != null)
             {
-                // Populate the form fields with the album data
-                hdnAlbumID.Value = album.AlbumID.ToString();
+                // Populate the form fields with the album data                
+                albumImage.ImageUrl = album.AlbumImage.ToString();
                 txtAlbumName.Text = album.AlbumName;
                 txtDescription.Text = album.AlbumDescription;
                 txtPrice.Text = album.AlbumPrice.ToString();
@@ -48,25 +51,26 @@ namespace Kpop_Ztation.View
 
         protected void btnUpdate_Click(object sender, EventArgs e)
         {
-            // Retrieve the album ID from the hidden field
-            int albumID = Convert.ToInt32(hdnAlbumID.Value);
+            // Retrieve the album ID
+            string ID = Request.QueryString["albumID"];
+            int albumID = int.Parse(ID);
 
-            // Get the album from the repository based on the ID
-            Album album = AlbumRepository.GetAlbumByAlbumID(albumID);
+            string Name = txtAlbumName.Text;
+            string Desc = txtDescription.Text;
+            int Price = int.Parse(txtPrice.Text);
+            int Stock = int.Parse(txtStock.Text);
 
-            if (album != null)
-            {
-                // Update the album object with the new data
-                album.AlbumName = txtAlbumName.Text;
-                album.AlbumDescription = txtDescription.Text;
-                album.AlbumPrice = Convert.ToInt32(txtPrice.Text);
-                album.AlbumStock = Convert.ToInt32(txtStock.Text);
+            string Filename = ImageUpload.PostedFile.FileName;
+            string Filepath = "/Images/Album/" + ImageUpload.FileName;
+            string imageExtension = Path.GetExtension(Filename).ToLower();
+            int fileSize = ImageUpload.PostedFile.ContentLength;
 
-                // Save the updated album to the repository
-                AlbumRepository.UpdateAlbum(album);
+            ImageUpload.PostedFile.SaveAs(Server.MapPath("~/Images/Album/") + Filename);
 
-                lblMessage.Text = "Album updated successfully.";
-            }
+
+            // Save the updated album to the repository
+            string labelTxt = AlbumController.UpdateAlbum(albumID, Name, Desc, Price, Stock, Filepath, imageExtension, fileSize);
+            lblMessage.Text = "Album updated successfully.";
         }
     }
 }

@@ -34,5 +34,13 @@ namespace Kpop_Ztation.Controller
             AccountHandler.CreateArtist(Name, Image);
             return "Artist Succesfully Added";
         }
+
+        public static String UpdateArtist(int ID, string Name, string Image, string ImageExtension, int fileSize)
+        {
+            //Validasi
+
+            AccountHandler.UpdateArtist(ID, Name, Image);
+            return "Artist succesfully updated";
+        }
     }
 }
