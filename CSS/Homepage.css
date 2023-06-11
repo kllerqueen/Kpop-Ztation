@@ -1,19 +1,12 @@
-﻿.homepage-header{
-    display: flex;
-    justify-content: center;
-
-}
-
-.homepage-header h1 {
-    font-family: Cabin, sans-serif;
-    font-weight: 700;
-    font-size: 27px;
-    color: #0e1111;
-}
+﻿
 
 .listview-container{
-    /*display: flex;
-    justify-content: center;*/
+    display: flex;
+    justify-content: center;
+}
+
+.listview-container tr td{
+    text-align: center;
 }
 
 .list {

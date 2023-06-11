@@ -8,24 +8,39 @@
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="WebsiteContent" runat="server">
-    <h3>Insert Album</h3>    
+    <div class="header">
+        <h1>Insert Album</h1>
+    </div> 
 
-    <asp:Label ID="Label1" runat="server" Text="Name"></asp:Label> &nbsp
-    <asp:TextBox ID="nameTxt" runat="server"></asp:TextBox> <br />
+    <div class="field">
+        <div class="field-item">
+            <asp:Label ID="Label1" runat="server" Text="Name"></asp:Label> &nbsp
+            <asp:TextBox ID="nameTxt" runat="server"></asp:TextBox> <br />
+        </div>
 
-    <asp:Label ID="Label2" runat="server" Text="Description"></asp:Label> &nbsp
-    <asp:TextBox ID="descTxt" runat="server"></asp:TextBox> <br />
+        <div class="field-item">
+            <asp:Label ID="Label2" runat="server" Text="Description"></asp:Label>
+            <asp:TextBox ID="descTxt" runat="server"></asp:TextBox>
+        </div>
 
-    <asp:Label ID="Label3" runat="server" Text="Price"></asp:Label> &nbsp
-    <asp:TextBox ID="priceTxt" runat="server"></asp:TextBox> <br />
+        <div class="field-item">
+            <asp:Label ID="Label3" runat="server" Text="Price"></asp:Label>
+            <asp:TextBox ID="priceTxt" runat="server"></asp:TextBox>
+        </div>
 
-    <asp:Label ID="Label4" runat="server" Text="Stock"></asp:Label> &nbsp
-    <asp:TextBox ID="stockTxt" runat="server"></asp:TextBox> <br />
+        <div class="field-item">
+            <asp:Label ID="Label4" runat="server" Text="Stock"></asp:Label>
+            <asp:TextBox ID="stockTxt" runat="server"></asp:TextBox>
+        </div>
 
-    <asp:Label ID="Label5" runat="server" Text="Image"></asp:Label> &nbsp
-    <asp:FileUpload ID="ImageUpload" runat="server" /> <br />
+        <div class="field-item">
+            <asp:Label ID="Label5" runat="server" Text="Image"></asp:Label>
+            <asp:FileUpload ID="ImageUpload" runat="server" />
+        </div>
+        
+        <asp:Label ID="errorTxt" runat="server" Text=""></asp:Label>
+        <asp:Button ID="InsertAlbumButton" class="button" runat="server" Text="Add New Album" OnClick="InsertAlbumButton_Click" />
+    </div>
+    <br /> <br />
 
-    <asp:Label ID="errorTxt" runat="server" Text=""></asp:Label>
-
-    <asp:Button ID="InsertAlbumButton" runat="server" Text="Insert" OnClick="InsertAlbumButton_Click" />
 </asp:Content>

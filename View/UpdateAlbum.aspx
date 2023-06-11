@@ -8,26 +8,46 @@
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="WebsiteContent" runat="server">
-    <h1>Update Album</h1>
+    <div class="header">
+        <h1>Update Album</h1>
+    </div>
 
-    <asp:Image ID="albumImage" runat="server" /> <br />
+    <div class="field">
+        <div class="field-item">
+            <asp:Image ID="albumImage" runat="server" />
+        </div>
     
-    <label>Album Name:</label>
-    <asp:TextBox ID="txtAlbumName" runat="server"></asp:TextBox><br />
+        <div class="field-item">
+            <label>Album Name:</label>
+            <asp:TextBox ID="txtAlbumName" runat="server"></asp:TextBox>
+        </div>
 
-    <label>Description:</label>
-    <asp:TextBox ID="txtDescription" runat="server"></asp:TextBox><br />
+        <div class="field-item">
+            <label>Description:</label>
+            <asp:TextBox ID="txtDescription" runat="server"></asp:TextBox>
+        </div>
 
-    <label>Price:</label>
-    <asp:TextBox ID="txtPrice" runat="server"></asp:TextBox><br />
+        <div class="field-item">
+            <label>Price:</label>
+            <asp:TextBox ID="txtPrice" runat="server"></asp:TextBox>
+        </div>
 
-    <label>Stock:</label>
-    <asp:TextBox ID="txtStock" runat="server"></asp:TextBox><br />
+        <div class="field-item">
+            <label>Stock:</label>
+            <asp:TextBox ID="txtStock" runat="server"></asp:TextBox>
+        </div>
 
-    <asp:Label ID="Label5" runat="server" Text="Image"></asp:Label>
-    <asp:FileUpload ID="ImageUpload" runat="server" /> <br />
+        <div class="field-item">
+            <asp:Label ID="Label5" runat="server" Text="Image"></asp:Label>
+            <asp:FileUpload ID="ImageUpload" runat="server" /> 
+        </div>
 
-    <asp:Label ID="lblMessage" runat="server" Text=""></asp:Label> <br />
-    <asp:Button ID="btnUpdate" runat="server" Text="Update" OnClick="btnUpdate_Click" />
+        <div class="field-item">
+            <asp:Label ID="lblMessage" runat="server" Text=""></asp:Label>
+        </div>
+
+        <asp:Button ID="btnUpdate" class="button" runat="server" Text="Update Existing Album" OnClick="btnUpdate_Click" />
+    </div>
+    <br /> <br />                               
 
 </asp:Content>

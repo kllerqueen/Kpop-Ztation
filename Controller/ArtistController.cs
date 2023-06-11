@@ -31,7 +31,7 @@ namespace Kpop_Ztation.Controller
                 return "Image can not be larger than 2MB";
             }
 
-            AccountHandler.CreateArtist(Name, Image);
+            ArtistHandler.CreateArtist(Name, Image);
             return "Artist Succesfully Added";
         }
 
@@ -39,7 +39,7 @@ namespace Kpop_Ztation.Controller
         {
             //Validasi
 
-            AccountHandler.UpdateArtist(ID, Name, Image);
+            ArtistHandler.UpdateArtist(ID, Name, Image);
             return "Artist succesfully updated";
         }
     }

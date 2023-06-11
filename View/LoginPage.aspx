@@ -16,26 +16,25 @@
             <asp:Label ID="Label1" class="login-text" runat="server" Text="Email"></asp:Label>
             <asp:TextBox ID="emailTxt" class="login-input" runat="server"></asp:TextBox>
     
-            <br />
             <asp:Label ID="Label2" class="login-text" runat="server" Text="Password"></asp:Label>
             <asp:TextBox ID="passwordTxt" class="login-input" runat="server" TextMode="Password"></asp:TextBox>    
-
-            <br />
-            <div>
+            
+            <div class="field-item">
                 <asp:CheckBox ID="rememberMe" CssClass="remember-me" runat="server" OnCheckedChanged="rememberMe_CheckedChanged" />
                 <asp:Label ID="Label3" class="login-text remember-me" runat="server" Text="Remember Me"></asp:Label>
-            </div>
-            <br />           
+            </div>            
 
-            <div>
+            <div class="field-item">
                 <asp:Label ID="Label4" class="login-text no-account" runat="server" Text="No account?"></asp:Label> 
                 <a href="../View/RegisterPage.aspx" class="register-now">register now</a> <br /> <br />
             </div>
 
-            <asp:Label ID="errorText" class="login-text" runat="server" Text=""></asp:Label>
+            <div class="field-item">
+                <asp:Label ID="errorText" class="login-text" runat="server" Text=""></asp:Label>
+            </div>      
 
-            <br />
-            <asp:Button ID="loginButton" class="Button" runat="server" Text="Login" OnClick="loginButton_Click" />
+            <asp:Button ID="loginButton" class="button" runat="server" Text="Login" OnClick="loginButton_Click" />
+
         </div>
     </div>
 

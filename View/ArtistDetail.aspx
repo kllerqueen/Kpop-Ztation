@@ -9,7 +9,16 @@
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="WebsiteContent" runat="server">
-    <h1>Artist Detail</h1> <br />
+    <div class="header">
+        <h1>Artist Detail</h1>
+    </div> 
+
+    <div class="header">
+        <%if (checkRole())
+        {  %>        
+            <asp:Button ID="InsertAlbumButton" class="button" runat="server" Text="Insert Album" OnClick="InsertAlbumButton_Click" />   <%
+        }  %>
+    </div>
 
     <asp:Image ID="artistImage" runat="server" /> <br />
     <asp:Label ID="artistName" runat="server"  Text=''></asp:Label> <br /> <br />
@@ -33,15 +42,5 @@
                     </table>
                 </div>
             </ItemTemplate> 
-        </asp:ListView>   
-
-    
-
-    <div>
-        <%if (checkRole())
-        {  %>
-        <%--<a href="../View/InsertAlbum.aspx">Insert Album</a>--%>
-        <asp:Button ID="InsertAlbumButton" runat="server" Text="Insert Album" OnClick="InsertAlbumButton_Click" />   <%
-        }  %>
-    </div>
+        </asp:ListView>       
 </asp:Content>

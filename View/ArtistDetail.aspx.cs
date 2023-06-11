@@ -37,7 +37,7 @@ namespace Kpop_Ztation.View
                     Artist artist = ArtistRepository.GetArtistByID(artistID);
 
                     artistImage.ImageUrl = artist.ArtistImage;
-                    artistName.Text = artist.ArtistName;
+                    artistName.Text = "Artist Name: " + artist.ArtistName;
 
                     updateListView();
                 }
@@ -67,7 +67,7 @@ namespace Kpop_Ztation.View
             LinkButton deleteButton = (LinkButton)sender;
             string ID = deleteButton.CommandArgument;
             int albumID = int.Parse(ID);
-            AccountHandler.DeleteAlbum(albumID);
+            AlbumHandler.DeleteAlbum(albumID);
             db.SaveChanges();
 
             updateListView();

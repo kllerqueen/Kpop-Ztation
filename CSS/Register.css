@@ -49,3 +49,7 @@ h2 {
     display: flex;
     justify-content: center;
 }
+
+.register-item{
+    margin-bottom: 20px;
+}

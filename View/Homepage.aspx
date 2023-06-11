@@ -10,23 +10,27 @@
 
 <asp:Content ID ="Content3" ContentPlaceHolderID="WebsiteContent" runat="server">
     <%if(Session["User"] == null) { %>
-        <div class="homepage-header">
+        <div class="header">
             <h1>Please log in to view the website's contents</h1>
         </div>
     <%} %>
 
     <%else{ %>
-        <h1>Home</h1>
-            <%if (checkRole())
+        <div class="header">
+            <h1>Home</h1>
+        </div>
+        <div class="header">
+                <%if (checkRole())
             { %>   
-            <asp:Button ID="InsertArtistButton" class="Button" runat="server" Text="Insert Artist" OnClick="InsertArtistButton_Click"/> &nbsp        
+            <asp:Button ID="InsertArtistButton" class="button" runat="server" Text="Insert Artist" OnClick="InsertArtistButton_Click"/> &nbsp        
         <%}%>     
+        </div>
 
         
 
         <br /><br />
 
-        <h2 class="header-text">Artist List</h2>
+        <h2 class="subheader-text">Artist List</h2>
 
         <div class="listview-container">            
             <asp:ListView ID="ArtistListView" runat="server">

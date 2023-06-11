@@ -7,27 +7,45 @@
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="WebsiteContent" runat="server">
-    <h1>Update Profile</h1>
+    <div class="header">
+        <h1>Update Profile</h1>
+    </div>
+    
+    <div class="field">
+        <div class="field-item">
+            <asp:Label ID="nameLabel" runat="server" Text="Name"></asp:Label>
+            <asp:TextBox ID="nameTxt" runat="server"></asp:TextBox>
+        </div>
 
-    <br />
-    <asp:Label ID="nameLabel" runat="server" Text="Name"></asp:Label> &nbsp
-    <asp:TextBox ID="nameTxt" runat="server"></asp:TextBox> <br />
+        <div class="field-item">
+            <asp:Label ID="emailLabel" runat="server" Text="Email"></asp:Label>
+            <asp:TextBox ID="emailTxt" runat="server"></asp:TextBox> 
+        </div>
 
-    <asp:Label ID="emailLabel" runat="server" Text="Email"></asp:Label> &nbsp
-    <asp:TextBox ID="emailTxt" runat="server"></asp:TextBox> <br />
+        <div class="field-item">
+            <asp:Label ID="genderLabel" runat="server" Text="Gender"></asp:Label> 
+            <asp:RadioButtonList ID="GenderSelect" runat="server">
+                <asp:ListItem Selected="True">Male</asp:ListItem>
+                <asp:ListItem>Female</asp:ListItem>
+            </asp:RadioButtonList>
+        </div>
 
-    <asp:Label ID="genderLabel" runat="server" Text="Gender"></asp:Label> &nbsp
-    <asp:RadioButtonList ID="GenderSelect" runat="server">
-        <asp:ListItem Selected="True">Male</asp:ListItem>
-        <asp:ListItem>Female</asp:ListItem>
-    </asp:RadioButtonList>
+        <div class="field-item">
+            <asp:Label ID="addressLabel" runat="server" Text="Address"></asp:Label> 
+            <asp:TextBox ID="addressTxt" runat="server"></asp:TextBox> 
+        </div>
 
-    <asp:Label ID="addressLabel" runat="server" Text="Address"></asp:Label> &nbsp
-    <asp:TextBox ID="addressTxt" runat="server"></asp:TextBox> <br />
+        <div class="field-item">
+            <asp:Label ID="passwordLabel" runat="server" Text="Password"></asp:Label> 
+            <asp:TextBox ID="passwordTxt" runat="server" TextMode="Password"></asp:TextBox> 
+        </div>
 
-    <asp:Label ID="passwordLabel" runat="server" Text="Password"></asp:Label> &nbsp
-    <asp:TextBox ID="passwordTxt" runat="server" TextMode="Password"></asp:TextBox> <br />
+        <div class="field-item">
+            <asp:Label ID="errorTxt" runat="server" Text=""></asp:Label>
+        </div>
 
-    <asp:Label ID="errorTxt" runat="server" Text=""></asp:Label> <br />
-    <asp:Button ID="updateProfile" runat="server" Text="Update" OnClick="updateProfile_Click" />
+        <asp:Button ID="updateProfile" class="button" runat="server" Text="Update Profile" OnClick="updateProfile_Click" />
+    </div>
+    <br /> <br />
+
 </asp:Content>

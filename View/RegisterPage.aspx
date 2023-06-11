@@ -32,8 +32,12 @@
             <asp:Label ID="Label5" class="register-text" runat="server" Text="Password"></asp:Label> 
             <asp:TextBox ID="passwordTxt" runat="server" TextMode="Password"></asp:TextBox> <br />
             
-            <asp:Label ID="errorTxt" runat="server" Text=""></asp:Label> <br />
-            <asp:Button ID="registerButton" class="Button" runat="server" Text="Register" OnClick="registerButton_Click" />
+            <div class="register-item">
+                <asp:Label ID="errorTxt" runat="server" Text=""></asp:Label> 
+            </div>
+
+            <asp:Button ID="registerButton" class="button" runat="server" Text="Register" OnClick="registerButton_Click" />
+
         </div>
     </div>
 

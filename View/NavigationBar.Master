@@ -52,7 +52,7 @@
                 <%} %>
                 <%else
                     { %>
-                <asp:Button ID="logoutButton" class="cta" runat="server" Text="Logout" OnClick="logoutButton_Click" />
+                <asp:Button ID="logoutButton" class="button" runat="server" Text="Logout" OnClick="logoutButton_Click" />
                 <%--<a class="cta" href="#"><button>Logout</button></a>--%>
                 <%} %>
 

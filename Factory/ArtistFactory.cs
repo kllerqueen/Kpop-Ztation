@@ -15,6 +15,7 @@ namespace Kpop_Ztation.Factory
             Idol.ArtistName = Name;
             Idol.ArtistImage = Image;
 
+
             return Idol;
         }
 

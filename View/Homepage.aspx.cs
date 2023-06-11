@@ -64,13 +64,13 @@ namespace Kpop_Ztation.View
             string ID = deleteButton.CommandArgument;
             int artistID = int.Parse(ID);
 
-            if(AccountHandler.CheckArtistAlbum(artistID))
+            if(AlbumHandler.CheckArtistAlbum(artistID))
             {
-                AccountHandler.DeleteAllAlbum(artistID);
+                AlbumHandler.DeleteAllAlbum(artistID);
                 db.SaveChanges();
             }
 
-            AccountHandler.DeleteArtist(artistID);
+            ArtistHandler.DeleteArtist(artistID);
             db.SaveChanges();
             updateListView();
         }        

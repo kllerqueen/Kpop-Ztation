@@ -46,7 +46,7 @@ namespace Kpop_Ztation.Controller
                 return "Image can not be larger than 2MB";
             }
 
-            AccountHandler.CreateAlbum(ArtistID, Name, Desc, Price, Stock, Image);
+            AlbumHandler.CreateAlbum(ArtistID, Name, Desc, Price, Stock, Image);
             return "Album succesfully added";
         }
 
@@ -54,7 +54,7 @@ namespace Kpop_Ztation.Controller
         {
             //Validation
 
-            AccountHandler.UpdateAlbum(ID, Name, Desc, Price, Stock, Image);
+            AlbumHandler.UpdateAlbum(ID, Name, Desc, Price, Stock, Image);
             return "Album succesfully updated";
         }
     }    

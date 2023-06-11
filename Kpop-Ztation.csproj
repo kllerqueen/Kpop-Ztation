@@ -123,6 +123,8 @@
     <Compile Include="Factory\TransactionDetailFactory.cs" />
     <Compile Include="Factory\TransactionHeaderFactory.cs" />
     <Compile Include="Handler\AccountHandler.cs" />
+    <Compile Include="Handler\AlbumHandler.cs" />
+    <Compile Include="Handler\ArtistHandler.cs" />
     <Compile Include="Handler\CartHandler.cs" />
     <Compile Include="Handler\TransactionDetailHandler.cs" />
     <Compile Include="Handler\TransactionHeaderHandler.cs" />
