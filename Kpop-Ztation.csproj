@@ -114,17 +114,20 @@
     <Compile Include="Controller\ArtistController.cs" />
     <Compile Include="Controller\CartController.cs" />
     <Compile Include="Controller\Functions.cs" />
-    <Compile Include="Controller\TransactionController.cs" />
+    <Compile Include="Controller\TransactionDetailController.cs" />
+    <Compile Include="Controller\TransactionHeaderController.cs" />
     <Compile Include="Factory\AccountFactory.cs" />
     <Compile Include="Factory\AlbumFactory.cs" />
     <Compile Include="Factory\ArtistFactory.cs" />
     <Compile Include="Factory\CartFactory.cs" />
-    <Compile Include="Factory\TransactionFactory.cs" />
+    <Compile Include="Factory\TransactionDetailFactory.cs" />
+    <Compile Include="Factory\TransactionHeaderFactory.cs" />
     <Compile Include="Handler\AccountHandler.cs" />
     <Compile Include="Handler\AlbumHandler.cs" />
     <Compile Include="Handler\ArtistHandler.cs" />
     <Compile Include="Handler\CartHandler.cs" />
-    <Compile Include="Handler\TransactionHandler.cs" />
+    <Compile Include="Handler\TransactionDetailHandler.cs" />
+    <Compile Include="Handler\TransactionHeaderHandler.cs" />
     <Compile Include="Model\Album.cs">
       <DependentUpon>KpopZtationModel.tt</DependentUpon>
     </Compile>
@@ -163,7 +166,8 @@
     <Compile Include="Repository\AlbumRepository.cs" />
     <Compile Include="Repository\ArtistRepository.cs" />
     <Compile Include="Repository\CartRepository.cs" />
-    <Compile Include="Repository\TransactionRepository.cs" />
+    <Compile Include="Repository\TransactionDetailRepository.cs" />
+    <Compile Include="Repository\TransactionHeaderRepository.cs" />
     <Compile Include="View\AlbumDetail.aspx.cs">
       <DependentUpon>AlbumDetail.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -180,6 +184,7 @@
     </Compile>
     <Compile Include="View\CartPage.aspx.cs">
       <DependentUpon>CartPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="View\CartPage.aspx.designer.cs">
       <DependentUpon>CartPage.aspx</DependentUpon>
