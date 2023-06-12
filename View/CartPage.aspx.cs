@@ -72,10 +72,10 @@ namespace Kpop_Ztation.View
         protected void CheckOutButton_Click(object sender, EventArgs e)
         {
             TransactionController.CreateTransactionHeader(DateTime.Now, (int)Session["User"]);
-            var lastID = db.TransactionHeaders.OrderByDescending(item => item.TransactionID).Select(item => item.TransactionID).FirstOrDefault();
+            var lastTransactionID = db.TransactionHeaders.Where(t => t.CustomerID == (int)Session["User"]).OrderByDescending(t => t.TransactionID).Select(t => t.TransactionID).FirstOrDefault();
             foreach(var item in cartList)
             {
-                TransactionController.CreateTransactionDetail(lastID, item.AlbumID, item.Qty);
+                TransactionController.CreateTransactionDetail(lastTransactionID, item.AlbumID, item.Qty);
             }
 
             RemoveAllItems(cartList);

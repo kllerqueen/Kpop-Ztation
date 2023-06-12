@@ -7,5 +7,36 @@
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="WebsiteContent" runat="server">
-    <h1>Transactions</h1>
+    <h1>Transaction History</h1>
+    <hr />
+    <div style="padding:50px">
+        <table style="width:500px" border="1">
+            <thead>
+                <tr>
+                    <th>Transaction ID</th>
+                    <th>Transaction Date</th>
+                    <th>Customer's Name</th>
+                    <th>Courier</th>
+                    <th>Album's Picture</th>
+                    <th>Album's Name</th>
+                    <th>Album's Quantity</th>
+                    <th>Album's Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <%foreach (var tran in tranDetail) {%>
+                <tr>
+                    <td><%= tran.TransactionID%></td>
+                    <td><%= tran.TransactionHeader.TransactionDate %></td>
+                    <td><%= tran.TransactionHeader.Customer.CustomerName %></td>
+                    <td> Courier Name </td>
+                    <td><%= tran.Album.AlbumImage %></td>
+                    <td><%= tran.Album.AlbumName %></td>
+                    <td><%= tran.Qty %></td>
+                    <td><%= tran.Qty * tran.Album.AlbumPrice %></td>
+                </tr>
+                <%} %>
+            </tbody>
+        </table>
+    </div>
 </asp:Content>
