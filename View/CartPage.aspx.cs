@@ -37,7 +37,7 @@ namespace Kpop_Ztation.View
             cartList = getAllCarts();
             foreach (var item in cartList)
             {
-                CartItem dataList = new CartItem { albumPicture = item.Album.AlbumImage, albumName = item.Album.AlbumName, albumPrice = item.Album.AlbumPrice, Quantity = item.Qty }
+                CartItem dataList = new CartItem { albumPicture = item.Album.AlbumImage, albumName = item.Album.AlbumName, albumPrice = item.Album.AlbumPrice, Quantity = item.Qty };
                 cartItems.Add(dataList);
             }
 
