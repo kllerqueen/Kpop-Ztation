@@ -63,14 +63,16 @@ namespace Kpop_Ztation.View
             string Filename = ImageUpload.PostedFile.FileName;
             string Filepath = "/Images/Album/" + ImageUpload.FileName;
             string imageExtension = Path.GetExtension(Filename).ToLower();
-            int fileSize = ImageUpload.PostedFile.ContentLength;
-
-            ImageUpload.PostedFile.SaveAs(Server.MapPath("~/Images/Album/") + Filename);
-
+            int fileSize = ImageUpload.PostedFile.ContentLength;            
 
             // Save the updated album to the repository
             string labelTxt = AlbumController.UpdateAlbum(albumID, Name, Desc, Price, Stock, Filepath, imageExtension, fileSize);
             lblMessage.Text = "Album updated successfully.";
+
+            if(labelTxt.Equals("Album succesfully updated"))
+            {
+                ImageUpload.PostedFile.SaveAs(Server.MapPath("~/Images/Album/") + Filename);
+            }
         }
     }
 }

@@ -31,5 +31,10 @@ namespace Kpop_Ztation.Handler
             Artist artist = ArtistRepository.GetArtistByID(ArtistID);
             ArtistRepository.RemoveArtist(artist);
         }
+
+        public static Artist GetArtist(String Name)
+        {
+            return ArtistRepository.GetArtistByName(Name);
+        }
     }
 }

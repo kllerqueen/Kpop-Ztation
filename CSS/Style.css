@@ -158,9 +158,31 @@ ul li {
 .field {
     display: flex;
     flex-direction: column;
-    align-items: center  
+    align-items: center;
+    text-align: center;
+}
+
+.listview-container {
+    display: flex;
+    justify-content: center;
+}
+
+    .listview-container tr td {
+        text-align: center;
+    }
+
+.list {
+    display: inline-block;
+    margin: 10px;
+    vertical-align: top;
+    transition: transform 0.3s ease;
 }
 
 .field-item{
     margin-bottom: 10px;
+}
+
+.image-header{
+    width: 520px;
+    height: 520px;
 }

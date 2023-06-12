@@ -60,6 +60,15 @@ namespace Kpop_Ztation.View
         protected global::System.Web.UI.WebControls.Label albumStock;
 
         /// <summary>
+        /// errorTxt control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label errorTxt;
+
+        /// <summary>
         /// purchaseAmount control.
         /// </summary>
         /// <remarks>

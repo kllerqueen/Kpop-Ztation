@@ -14,7 +14,7 @@
 
     <div class="field">
         <div class="field-item">
-            <asp:Image ID="albumImage" runat="server" />
+            <asp:Image ID="albumImage" class="image-header" runat="server" />
         </div>
     
         <div class="field-item">

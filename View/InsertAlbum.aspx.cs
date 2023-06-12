@@ -33,12 +33,15 @@ namespace Kpop_Ztation.View
             string Filename = ImageUpload.PostedFile.FileName;
             string Filepath = "/Images/Album/" + ImageUpload.FileName;
             string imageExtension = Path.GetExtension(Filename).ToLower();
-            int fileSize = ImageUpload.PostedFile.ContentLength;
-
-            ImageUpload.PostedFile.SaveAs(Server.MapPath("~/Images/Album/") + Filename);
+            int fileSize = ImageUpload.PostedFile.ContentLength;            
 
             string labelText = AlbumController.CreateAlbum(ArtistID, Name, Desc, Price, Stock, Filepath, imageExtension, fileSize);
             errorTxt.Text = labelText;
+
+            if(labelText.Equals("Album succesfully added"))
+            {
+                ImageUpload.PostedFile.SaveAs(Server.MapPath("~/Images/Album/") + Filename);
+            }
         }
     }
 }

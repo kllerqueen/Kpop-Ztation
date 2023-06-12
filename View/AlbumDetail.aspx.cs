@@ -27,17 +27,23 @@ namespace Kpop_Ztation.View
                     Album album = AlbumRepository.GetAlbumByAlbumID(albumID);
 
                     albumImage.ImageUrl = album.AlbumImage;
-                    albumName.Text = album.AlbumName;
+                    albumName.Text = "Album Name: " + album.AlbumName;
                     albumDesc.Text = album.AlbumDescription;
-                    albumPrice.Text = "Rp." + album.AlbumPrice;
+                    albumPrice.Text = "Price: Rp." + album.AlbumPrice;
                     albumStock.Text = "Available stock: " + album.AlbumStock;                    
                 }
             }
         }
 
         protected void addCart_Click(object sender, EventArgs e)
-        {
+        {            
+            int albumID = int.Parse(Request.QueryString["albumId"]);
+            int userID = int.Parse(Session["User"].ToString());
             
+            int cartAmount = int.Parse(purchaseAmount.Text);
+
+            string labelTxt = AlbumController.AddToCart(userID, albumID, cartAmount);
+            errorTxt.Text = labelTxt;
         }
     }
 }

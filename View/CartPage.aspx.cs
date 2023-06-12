@@ -26,9 +26,11 @@ namespace Kpop_Ztation.View
         
 
         // Still need to revise where to each part of the code
+        // Hubungin ke controller -> handler -> repo instead of Backend -> repo
         public List<Cart> getAllCarts()
         {
-            return (from Cart in db.Carts where Cart.CustomerID == (int)Session["User"] select Cart).ToList();
+            int id = int.Parse(Session["User"].ToString());
+            return (from Cart in db.Carts where Cart.CustomerID.Equals(id) select Cart).ToList();
         }
 
         protected void refreshTable()
@@ -37,7 +39,7 @@ namespace Kpop_Ztation.View
             cartList = getAllCarts();
             foreach (var item in cartList)
             {
-                CartItem dataList = new CartItem { albumPicture = item.Album.AlbumImage, albumName = item.Album.AlbumName, albumPrice = item.Album.AlbumPrice, Quantity = item.Qty }
+                CartItem dataList = new CartItem { albumPicture = item.Album.AlbumImage, albumName = item.Album.AlbumName, albumPrice = item.Album.AlbumPrice, Quantity = item.Qty };
                 cartItems.Add(dataList);
             }
 
@@ -47,6 +49,10 @@ namespace Kpop_Ztation.View
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if(Session["User"] == null)
+            {
+                Response.Redirect("../View/LoginPage.aspx");
+            }
             refreshTable();
         }
 

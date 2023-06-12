@@ -19,21 +19,29 @@
             <asp:Button ID="InsertAlbumButton" class="button" runat="server" Text="Insert Album" OnClick="InsertAlbumButton_Click" />   <%
         }  %>
     </div>
+    <br /> <br />
 
-    <asp:Image ID="artistImage" runat="server" /> <br />
-    <asp:Label ID="artistName" runat="server"  Text=''></asp:Label> <br /> <br />
+    <div class="field">
+        <div class="field-item">
+            <asp:Image ID="artistImage" class="image-header" runat="server" /> <br />            
+        </div>
 
-    <asp:Label ID="Label3" runat="server" Text="Artist Album Details"></asp:Label> <br />
-    <asp:Label ID="testLbl" runat="server" Text=""></asp:Label>
+        <div class="field">
+            <asp:Label ID="artistName" runat="server"  Text=''></asp:Label> <br /> <br />
+        </div>
 
-     <asp:ListView ID="AlbumListView" runat="server">
+        <h1 class="subheader-text">Artist's Album Collection</h1> <br />        
+    </div>
+
+    <div class="listview-container">
+        <asp:ListView ID="AlbumListView" runat="server">
             <ItemTemplate>
                 <div class="list">
                     <table>
                         <tr><td><a href='<%# "../View/AlbumDetail.aspx?albumId=" + Eval("AlbumID") %>'><img class="ad-image" src='<%# Eval("AlbumImage") %>' /></a></td></tr>
-                        <tr><td><asp:Label ID="Label2" runat="server" Text='<%# Eval("AlbumName") %>'></asp:Label></td></tr>                        
+                        <tr><td><asp:Label ID="Label2" runat="server" Text='<%# "Album Title: " +  Eval("AlbumName") %>'></asp:Label></td></tr>                        
                         <tr><td><asp:Label ID="Label5" runat="server" Text='<%# Eval("AlbumDescription") %>'></asp:Label></td></tr>                        
-                        <tr><td><asp:Label ID="Label4" runat="server" Text='<%#Eval("AlbumPrice") %>'></asp:Label></td></tr>
+                        <tr><td><asp:Label ID="Label4" runat="server" Text='<%# "Price: Rp." + Eval("AlbumPrice") %>'></asp:Label></td></tr>
                         <%if (checkRole())
                             { %>
                         <tr><td><a class="listview-button" href='<%# "../View/UpdateAlbum.aspx?albumId=" + Eval("AlbumID") %>'>Update Album</a></td></tr>
@@ -42,5 +50,7 @@
                     </table>
                 </div>
             </ItemTemplate> 
-        </asp:ListView>       
+        </asp:ListView>
+    </div> 
+
 </asp:Content>

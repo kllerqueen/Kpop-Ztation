@@ -10,14 +10,14 @@ namespace Kpop_Ztation.Controller
     {
         public static String CreateArtist(String Name, String Image, String imageExtension, int fileSize)
         {
-            if(Functions.CheckEmpty(Name))
+            if(Functions.CheckEmpty(Name) || Functions.CheckEmpty(Image) || Functions.CheckEmpty(imageExtension))
             {
-                return "Please fill the name field";
+                return "Please enter an artist name and upload an image";
             }
 
-            if(Functions.CheckEmpty(Image))
+            if(Functions.CheckArtistUnique(Name))
             {
-                return "Please upload an image";
+                return "Artist already exists";
             }
 
             if (imageExtension != ".png" && imageExtension != ".jpg" && imageExtension != ".jpeg" && imageExtension != ".jfif")
@@ -35,9 +35,28 @@ namespace Kpop_Ztation.Controller
             return "Artist Succesfully Added";
         }
 
-        public static String UpdateArtist(int ID, string Name, string Image, string ImageExtension, int fileSize)
+        public static String UpdateArtist(int ID, string Name, string Image, string imageExtension, int fileSize)
         {
-            //Validasi
+            if (Functions.CheckEmpty(Name) || Functions.CheckEmpty(Image) || Functions.CheckEmpty(imageExtension))
+            {
+                return "Please enter an artist name and upload an image";
+            }
+
+            if (Functions.CheckArtistUnique(Name))
+            {
+                return "Artist already exists";
+            }
+
+            if (imageExtension != ".png" && imageExtension != ".jpg" && imageExtension != ".jpeg" && imageExtension != ".jfif")
+            {
+                return "Incorrect image type. Uploaded image can only be .png, .jpg, .jpeg, or .jfif";
+            }
+
+            int maxFileSize = 2 * 1024 * 1024;
+            if (fileSize > maxFileSize)
+            {
+                return "Image can not be larger than 2MB";
+            }
 
             ArtistHandler.UpdateArtist(ID, Name, Image);
             return "Artist succesfully updated";

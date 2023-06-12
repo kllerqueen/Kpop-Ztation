@@ -33,6 +33,11 @@ namespace Kpop_Ztation.Repository
             return (from u in db.Artists where ID.Equals(u.ArtistID) select u).FirstOrDefault();
         }
 
+        public static Artist GetArtistByName(String Name)
+        {
+            return (from u in db.Artists where Name.Equals(u.ArtistName) select u).FirstOrDefault();
+        }
+
         public static int RemoveArtist(Artist artist)
         {
             db.Artists.Remove(artist);

@@ -26,14 +26,14 @@ namespace Kpop_Ztation.View
             string Filepath = "/Images/Artist/" + ImageUpload.FileName;
             string imageExtension = Path.GetExtension(Filename).ToLower();
             int fileSize = ImageUpload.PostedFile.ContentLength;
+           
+            String labelText = ArtistController.CreateArtist(Name, Filepath, imageExtension, fileSize);
+            errorTxt.Text = labelText;
 
-            if(!Filename.Equals(""))
+            if (labelText.Equals("Artist Succesfully Added"))
             {
                 ImageUpload.PostedFile.SaveAs(Server.MapPath("~/Images/Artist/") + Filename);
             }
-
-            String labelText = ArtistController.CreateArtist(Name, Filepath, imageExtension, fileSize);
-            errorTxt.Text = labelText;
         }
     }
 }

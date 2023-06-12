@@ -24,6 +24,11 @@ namespace Kpop_Ztation.Handler
 
             AccountRepository.UpdateProfile(User);            
             return;
-        }                
+        }
+        public static Customer GetEmail(String Email)
+        {
+            return AccountRepository.GetEmail(Email);
+            
+        }
     }
 }

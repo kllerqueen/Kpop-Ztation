@@ -42,12 +42,15 @@ namespace Kpop_Ztation.View
             string Filename = ImageUpload.PostedFile.FileName;
             string Filepath = "/Images/Artist/" + ImageUpload.FileName;
             string imageExtension = Path.GetExtension(Filename).ToLower();
-            int fileSize = ImageUpload.PostedFile.ContentLength;
-
-            ImageUpload.PostedFile.SaveAs(Server.MapPath("~/Images/Artist/") + Filename);
+            int fileSize = ImageUpload.PostedFile.ContentLength;                      
 
             string labelText = ArtistController.UpdateArtist(ID, Name, Filepath, imageExtension, fileSize);
             errorTxt.Text = labelText;
+
+            if(labelText.Equals("Artist succesfully updated"))
+            {
+                ImageUpload.PostedFile.SaveAs(Server.MapPath("~/Images/Artist/") + Filename);
+            }
         }
     }
 }

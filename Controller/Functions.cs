@@ -5,6 +5,7 @@ using System.Web;
 using System.Text.RegularExpressions;
 using Kpop_Ztation.Model;
 using Kpop_Ztation.Repository;
+using Kpop_Ztation.Handler;
 
 namespace Kpop_Ztation.Controller
 {
@@ -41,7 +42,7 @@ namespace Kpop_Ztation.Controller
 
         public static bool CheckEmailUnique(String Email)
         {
-            Customer User = AccountRepository.GetEmail(Email);
+            Customer User = AccountHandler.GetEmail(Email);
 
             if(User != null)
             {
@@ -67,5 +68,28 @@ namespace Kpop_Ztation.Controller
             }
             return true;
         }
+
+        public static bool CheckArtistUnique(String Name)
+        {
+            Artist Idol = ArtistHandler.GetArtist(Name);
+
+            if(Idol != null)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public static bool CheckAmount(int ID, int Amount)
+        {
+            Album Collections = AlbumRepository.GetAlbumByAlbumID(ID);
+
+            if(Amount > Collections.AlbumStock)
+            {
+                return true;
+            }
+            return false;
+        }
+
     }
 }

@@ -8,14 +8,19 @@
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="WebsiteContent" runat="server">
-    <h1>Album Detail</h1> <br />
+    <div class="field">
+        <div class="header">
+            <h1>Album Detail</h1> 
+        </div>
 
-    <asp:Image ID="albumImage" runat="server" /> <br />
-    <asp:Label ID="albumName" runat="server"  Text=''></asp:Label> <br />
-    <asp:Label ID="albumDesc" runat="server"  Text=''></asp:Label> <br />
-    <asp:Label ID="albumPrice" runat="server"  Text=''></asp:Label> <br />
-    <asp:Label ID="albumStock" runat="server"  Text=''></asp:Label> <br />
-    <asp:TextBox ID="purchaseAmount" runat="server" placeholder="Amount to buy"></asp:TextBox>
-    <asp:Button ID="addCart" runat="server" Text="Add to Cart" OnClick="addCart_Click" /> <br /><br /><br />
+        <asp:Image ID="albumImage" class="image-header" runat="server" /> <br />
+        <asp:Label ID="albumName" runat="server"  Text=''></asp:Label> <br />
+        <asp:Label ID="albumDesc" runat="server"  Text=''></asp:Label> <br />
+        <asp:Label ID="albumPrice" runat="server"  Text=''></asp:Label> <br />
+        <asp:Label ID="albumStock" runat="server"  Text=''></asp:Label> <br />
+        <asp:Label ID="errorTxt" runat="server"  Text=''></asp:Label> <br />
+        <asp:TextBox ID="purchaseAmount" runat="server" placeholder="Amount to buy"></asp:TextBox>
+        <asp:Button ID="addCart" runat="server" Text="Add to Cart" OnClick="addCart_Click" /> <br /><br /><br />
+    </div>
     
 </asp:Content>
