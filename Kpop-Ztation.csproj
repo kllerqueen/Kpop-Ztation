@@ -103,6 +103,7 @@
     <Content Include="View\LoginPage.aspx" />
     <Content Include="View\RegisterPage.aspx" />
     <Content Include="View\TransactionPage.aspx" />
+    <Content Include="View\TransactionReport.aspx" />
     <Content Include="View\UpdateAlbum.aspx" />
     <Content Include="View\UpdateArtist.aspx" />
     <Content Include="View\UpdateProfile.aspx" />
@@ -115,6 +116,11 @@
     <Compile Include="Controller\CartController.cs" />
     <Compile Include="Controller\Functions.cs" />
     <Compile Include="Controller\TransactionController.cs" />
+    <Compile Include="Dataset\KpopZtationDataset.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KpopZtationDataset.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Factory\AccountFactory.cs" />
     <Compile Include="Factory\AlbumFactory.cs" />
     <Compile Include="Factory\ArtistFactory.cs" />
@@ -233,6 +239,13 @@
     <Compile Include="View\TransactionPage.aspx.designer.cs">
       <DependentUpon>TransactionPage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="View\TransactionReport.aspx.cs">
+      <DependentUpon>TransactionReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\TransactionReport.aspx.designer.cs">
+      <DependentUpon>TransactionReport.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View\UpdateAlbum.aspx.cs">
       <DependentUpon>UpdateAlbum.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -263,6 +276,17 @@
     <Content Include="Model\KpopZtationModel.edmx.diagram">
       <DependentUpon>KpopZtationModel.edmx</DependentUpon>
     </Content>
+    <Content Include="Dataset\KpopZtationDataset.xsc">
+      <DependentUpon>KpopZtationDataset.xsd</DependentUpon>
+    </Content>
+    <None Include="Dataset\KpopZtationDataset.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>KpopZtationDataset.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Dataset\KpopZtationDataset.xss">
+      <DependentUpon>KpopZtationDataset.xsd</DependentUpon>
+    </Content>
     <None Include="packages.config" />
     <Content Include="View\NavigationBar.Master" />
     <None Include="Web.Debug.config">
@@ -275,6 +299,7 @@
   <ItemGroup>
     <Folder Include="Images\Album\" />
     <Folder Include="Images\Artist\" />
+    <Folder Include="Report\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
