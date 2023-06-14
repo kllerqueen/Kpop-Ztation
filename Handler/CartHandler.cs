@@ -43,10 +43,10 @@ namespace Kpop_Ztation.Handler
             return lastTransactionID;
         }
 
-        public static Cart getCartDelete(int userID, int albumID)
+        public static void getCartDelete(int userID, int albumID, int qty)
         {
-            Cart cartDelete = CartRepository.getCartDelete(userID, albumID);
-            return cartDelete;
+            CartRepository.getCartDelete(userID, albumID, qty);
+            return;
         }
 
 

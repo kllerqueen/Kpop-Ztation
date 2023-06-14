@@ -48,6 +48,5 @@ namespace Kpop_Ztation.Repository
             db.Albums.RemoveRange(albums);
             return db.SaveChanges();
         }
-        
     }
 }

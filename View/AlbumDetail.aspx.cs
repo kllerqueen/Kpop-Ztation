@@ -29,14 +29,15 @@ namespace Kpop_Ztation.View
         }
 
         protected void addCart_Click(object sender, EventArgs e)
-        {            
+        {
             int albumID = int.Parse(Request.QueryString["albumId"]);
             int userID = int.Parse(Session["User"].ToString());
-            
-            int cartAmount = int.Parse(purchaseAmount.Text);
 
+            int cartAmount = int.Parse(purchaseAmount.Text);
+            
             string labelTxt = AlbumController.AddToCart(userID, albumID, cartAmount);
             errorTxt.Text = labelTxt;
+
         }
 
         public bool checkRole()

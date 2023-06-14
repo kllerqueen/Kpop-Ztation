@@ -17,8 +17,12 @@ namespace Kpop_Ztation.Repository
 
         public static void CreateCart(Cart newCart)
         {
-            db.Carts.Add(newCart);
+            Album stock = (from u in db.Albums where newCart.AlbumID == u.AlbumID select u).FirstOrDefault();
+            stock.AlbumStock -= newCart.Qty;
             db.SaveChanges();
+
+            db.Carts.Add(newCart);
+            UpdateCart();
             return;
         }
 
@@ -45,10 +49,17 @@ namespace Kpop_Ztation.Repository
             return lastTransactionID;
         }
 
-        public static Cart getCartDelete(int userID, int albumID)
+        public static void getCartDelete(int userID, int albumID, int qty)
         {
-            Cart toDelete = db.Carts.FirstOrDefault(c => c.CustomerID == userID && c.AlbumID == albumID);
-            return toDelete;
+            Album stock = (from u in db.Albums where albumID == u.AlbumID select u).FirstOrDefault();
+            stock.AlbumStock += qty;
+
+            Cart toDelete = db.Carts.Find(userID, albumID);
+            db.Carts.Remove(toDelete);
+            UpdateCart();
+            return;
         }
+
+        
     }
 }

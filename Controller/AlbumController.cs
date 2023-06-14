@@ -99,7 +99,7 @@ namespace Kpop_Ztation.Controller
                 return "Amount cannot be more than album stock";
             }
 
-            CartHandler.CreateCart(customerID, albumID, Amount);
+            CartController.CreateCart(customerID, albumID, Amount);
             return "Item added to cart";
         }
     }    

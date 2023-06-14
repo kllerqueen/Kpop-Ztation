@@ -13,6 +13,7 @@ namespace Kpop_Ztation.View
     public class CartItem
     {
         public String Picture { get; set; }
+        public int User { get; set; }
         public String Name { get; set; }
         public int Quantity { get; set; }
         public int Price { get; set; }
@@ -23,6 +24,7 @@ namespace Kpop_Ztation.View
     {
         static KpopZtationDatabaseEntities1 db = new KpopZtationDatabaseEntities1();
         List<Cart> cartList = new List<Cart>();
+        List<CartItem> cartItemsList = new List<CartItem>();
 
         protected int getUserID()
         {
@@ -38,15 +40,23 @@ namespace Kpop_Ztation.View
             cartList = CartController.getAllCarts(getUserID());
             foreach (var item in cartList)
             {
-                dataList = new CartItem{ Picture = item.Album.AlbumImage, Name = item.Album.AlbumName, Quantity = item.Qty, Price = item.Album.AlbumPrice * item.Qty, albumID = item.AlbumID };
+                dataList = new CartItem{ albumID = item.AlbumID, User = getUserID(), Picture = item.Album.AlbumImage, Name = item.Album.AlbumName, Quantity = item.Qty, Price = item.Album.AlbumPrice * item.Qty };
                 cartItems.Add(dataList);
             }
+            
+            cartItemsList = cartItems;
+            
+            var albumIdColumn = CartGridView.Columns.Cast<DataControlField>().FirstOrDefault(column => column.HeaderText == "Album ID");
+            if (albumIdColumn != null)
+            {
+                albumIdColumn.Visible = false;
+            }
 
-            //var albumIdColumn = CartGridView.Columns.Cast<DataControlField>().FirstOrDefault(column => column.HeaderText == "AlbumID");
-            //if (albumIdColumn != null)
-           // {
-            //    albumIdColumn.Visible = false;
-            //}
+            var userIdColumn = CartGridView.Columns.Cast<DataControlField>().FirstOrDefault(column => column.HeaderText == "User ID");
+            if (userIdColumn != null)
+            {
+                userIdColumn.Visible = false;
+            }
 
             CartGridView.DataSource = cartItems;
             CartGridView.DataBind();
@@ -64,18 +74,15 @@ namespace Kpop_Ztation.View
             refreshTable();
         }
 
-
         protected void CartGridView_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-            GridViewRow row = CartGridView.Rows[e.RowIndex];
-            String albumID = row.Cells[4].Text.ToString();
-            //var item = cartList[e.RowIndex];
-            //var albumID = item.AlbumID;
-            Cart toDelete = CartController.getCartDelete(getUserID(), int.Parse(albumID));
+            var item = cartItemsList[e.RowIndex];
+            var albumID = item.albumID;
+            var qty = item.Quantity;
+            CartController.getCartDelete(getUserID(), albumID, qty);
 
-            db.Carts.Remove(toDelete);
-            CartController.UpdateCart();
             refreshTable();
+
         }
 
         protected void CheckOutButton_Click(object sender, EventArgs e)

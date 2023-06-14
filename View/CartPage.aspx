@@ -10,11 +10,12 @@
     <h1>Cart</h1>
     <asp:GridView ID="CartGridView" runat="server" AutoGenerateColumns="False" OnRowDeleting="CartGridView_RowDeleting">
         <Columns>
+            <asp:BoundField DataField="albumID" HeaderText="Album ID"/>
+            <asp:BoundField DataField="User" HeaderText="User ID"/>
             <asp:ImageField DataImageUrlField="Picture" HeaderText="Album's Picture" ControlStyle-Width="100" ControlStyle-Height="100"/>
             <asp:BoundField DataField="Name" HeaderText="Album's Name"/>
             <asp:BoundField DataField="Quantity" HeaderText="Album's Quantity"/>
             <asp:BoundField DataField="Price" HeaderText="Album's Price"/>
-            <asp:BoundField DataField="albumID" HeaderText="Album ID"/>
             <asp:CommandField ButtonType="Button" HeaderText="Actions" ShowDeleteButton="True" ShowHeader="True" DeleteText="Remove" />
         </Columns>
         <EmptyDataTemplate>
