@@ -9,14 +9,13 @@
 </asp:Content>
 
 <asp:Content ID ="Content3" ContentPlaceHolderID="WebsiteContent" runat="server">
-    <%if(Session["User"] == null) { %>
+    <%--<%if(Session["User"] == null) { %>
         <div class="header">
             <h1>Please log in to view the website's contents</h1>
         </div>
-    <%} %>
+    <%} %>--%>
 
-    <%else{ %>
-        <div class="header">
+    <div class="header">
             <h1>Home</h1>
         </div>
         <div class="header">
@@ -59,5 +58,4 @@
             </asp:ListView> 
         </div>
         <br /> <br />
-    <%} %>
 </asp:Content>

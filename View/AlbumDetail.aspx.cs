@@ -14,24 +14,17 @@ namespace Kpop_Ztation.View
     {        
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["User"] == null)
+            if (Request.QueryString["albumId"] != null)
             {
-                Response.Redirect("../View/LoginPage.aspx");
-            }    
-            else
-            {
-                if (Request.QueryString["albumId"] != null)
-                {
-                    string ID = Request.QueryString["albumId"];
-                    int albumID = int.Parse(ID);
-                    Album album = AlbumRepository.GetAlbumByAlbumID(albumID);
+                string ID = Request.QueryString["albumId"];
+                int albumID = int.Parse(ID);
+                Album album = AlbumRepository.GetAlbumByAlbumID(albumID);
 
-                    albumImage.ImageUrl = album.AlbumImage;
-                    albumName.Text = "Album Name: " + album.AlbumName;
-                    albumDesc.Text = album.AlbumDescription;
-                    albumPrice.Text = "Price: Rp." + album.AlbumPrice;
-                    albumStock.Text = "Available stock: " + album.AlbumStock;                    
-                }
+                albumImage.ImageUrl = album.AlbumImage;
+                albumName.Text = "Album Name: " + album.AlbumName;
+                albumDesc.Text = album.AlbumDescription;
+                albumPrice.Text = "Price: Rp." + album.AlbumPrice;
+                albumStock.Text = "Available stock: " + album.AlbumStock;
             }
         }
 
@@ -44,6 +37,25 @@ namespace Kpop_Ztation.View
 
             string labelTxt = AlbumController.AddToCart(userID, albumID, cartAmount);
             errorTxt.Text = labelTxt;
+        }
+
+        public bool checkRole()
+        {
+            if (Session["User"] == null)
+            {
+                return false;
+            }
+            else
+            {
+                int ID = int.Parse(Session["User"].ToString());
+                Customer data = AccountController.GetCustomer(ID);
+
+                if (data.CustomerRole.Equals("Admin"))
+                {
+                    return true;
+                }
+                return false;
+            }
         }
     }
 }

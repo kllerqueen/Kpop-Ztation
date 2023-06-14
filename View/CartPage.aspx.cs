@@ -27,16 +27,13 @@ namespace Kpop_Ztation.View
 
         // Still need to revise where to each part of the code
         // Hubungin ke controller -> handler -> repo instead of Backend -> repo
-        public List<Cart> getAllCarts()
-        {
-            int id = int.Parse(Session["User"].ToString());
-            return (from Cart in db.Carts where Cart.CustomerID.Equals(id) select Cart).ToList();
-        }
-
         protected void refreshTable()
         {
+            int id = int.Parse(Session["User"].ToString());
+
             List<CartItem> cartItems = new List<CartItem>();
-            cartList = getAllCarts();
+            cartList = CartController.GetAllCarts(id);
+
             foreach (var item in cartList)
             {
                 CartItem dataList = new CartItem { albumPicture = item.Album.AlbumImage, albumName = item.Album.AlbumName, albumPrice = item.Album.AlbumPrice, Quantity = item.Qty };

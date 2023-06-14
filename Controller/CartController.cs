@@ -1,4 +1,6 @@
 ﻿using Kpop_Ztation.Handler;
+using Kpop_Ztation.Model;
+using Kpop_Ztation.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +14,11 @@ namespace Kpop_Ztation.Controller
         {
             CartHandler.CreateCart(customerId, albumId, qty);
             return;
+        }
+
+        public static List<Cart> GetAllCarts(int customerId)
+        {
+            return CartRepository.GetAllCarts(customerId);
         }
     }
 }

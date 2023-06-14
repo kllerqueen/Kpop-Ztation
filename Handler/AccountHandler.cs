@@ -30,5 +30,10 @@ namespace Kpop_Ztation.Handler
             return AccountRepository.GetEmail(Email);
             
         }
+
+        public static Customer GetUser(int ID)
+        {
+            return AccountRepository.GetUserByID(ID);
+        }
     }
 }

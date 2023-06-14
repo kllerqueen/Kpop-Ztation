@@ -1,4 +1,5 @@
-﻿using Kpop_Ztation.Handler;
+﻿using Kpop_Ztation.Controller;
+using Kpop_Ztation.Handler;
 using Kpop_Ztation.Model;
 using Kpop_Ztation.Repository;
 using System;
@@ -24,23 +25,16 @@ namespace Kpop_Ztation.View
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["User"] == null)
+            if (Request.QueryString["artistId"] != null)
             {
-                Response.Redirect("../View/LoginPage.aspx");
-            }
-            else
-            {
-                if(Request.QueryString["artistId"] != null)
-                {
-                    string ID = Request.QueryString["artistId"];
-                    int artistID = int.Parse(ID);
-                    Artist artist = ArtistRepository.GetArtistByID(artistID);
+                string ID = Request.QueryString["artistId"];
+                int artistID = int.Parse(ID);
+                Artist artist = ArtistRepository.GetArtistByID(artistID);
 
-                    artistImage.ImageUrl = artist.ArtistImage;
-                    artistName.Text = "Artist Name: " + artist.ArtistName;
+                artistImage.ImageUrl = artist.ArtistImage;
+                artistName.Text = "Artist Name: " + artist.ArtistName;
 
-                    updateListView();
-                }
+                updateListView();
             }
         }
 
@@ -52,14 +46,21 @@ namespace Kpop_Ztation.View
 
         public bool checkRole()
         {
-            int ID = int.Parse(Session["User"].ToString());
-            Customer data = (from dat in db.Customers where dat.CustomerID.Equals(ID) select dat).FirstOrDefault();
-
-            if (data.CustomerRole.Equals("Admin"))
+            if (Session["User"] == null)
             {
-                return true;
+                return false;
             }
-            return false;
+            else
+            {
+                int ID = int.Parse(Session["User"].ToString());
+                Customer data = AccountController.GetCustomer(ID);
+
+                if (data.CustomerRole.Equals("Admin"))
+                {
+                    return true;
+                }
+                return false;
+            }
         }
 
         protected void deleteButton_Click(object sender, EventArgs e)

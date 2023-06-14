@@ -1,4 +1,5 @@
 ﻿using Kpop_Ztation.Handler;
+using Kpop_Ztation.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -85,6 +86,11 @@ namespace Kpop_Ztation.Controller
             }
             AccountHandler.UpdateProfile(ID, Name, Email, Password, Gender, Address);
             return "Account successfully updated.";
+        }
+
+        public static Customer GetCustomer(int id)
+        {
+            return AccountHandler.GetUser(id);
         }
     }
 }

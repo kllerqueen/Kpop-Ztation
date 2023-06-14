@@ -31,7 +31,7 @@
                         <%else if (Session["User"] != null && checkRole())
                             { %>
                         <li><a href="../View/Homepage.aspx">Home</a></li>                        
-                        <li><a href="../View/TransactionPage.aspx">Transaction History</a></li>
+                        <li><a href="../View/TransactionPage.aspx">Transaction Report</a></li>
                         <li><a href="../View/UpdateProfile.aspx">Update Profile</a></li>
                         <%} %>
 
@@ -39,7 +39,7 @@
                             { %>
                         <li><a href="../View/Homepage.aspx">Home</a></li>
                         <li><a href="../View/CartPage.aspx">Cart</a></li>
-                        <li><a href="../View/TransactionReport.aspx">Transaction Report</a></li>
+                        <li><a href="../View/TransactionReport.aspx">Transaction History</a></li>
                         <li><a href="../View/UpdateProfile.aspx">Update Profile</a></li>
                         <%} %>
 

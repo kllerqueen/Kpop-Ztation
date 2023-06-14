@@ -28,5 +28,10 @@ namespace Kpop_Ztation.Repository
             return;
         }
 
+        public static List<Cart> GetAllCarts(int customerId)
+        {
+            return (from u in db.Carts where u.CustomerID.Equals(customerId) select u).ToList();
+        }
+
     }
 }

@@ -19,8 +19,12 @@
         <asp:Label ID="albumPrice" runat="server"  Text=''></asp:Label> <br />
         <asp:Label ID="albumStock" runat="server"  Text=''></asp:Label> <br />
         <asp:Label ID="errorTxt" runat="server"  Text=''></asp:Label> <br />
-        <asp:TextBox ID="purchaseAmount" runat="server" placeholder="Amount to buy"></asp:TextBox>
-        <asp:Button ID="addCart" runat="server" Text="Add to Cart" OnClick="addCart_Click" /> <br /><br /><br />
+        
+        <%if (checkRole() == false || Session["User"] != null)
+            { %>
+                <asp:TextBox ID="purchaseAmount" runat="server" placeholder="Amount to buy"></asp:TextBox>
+                <asp:Button ID="addCart" runat="server" Text="Add to Cart" OnClick="addCart_Click" /> <br /><br /><br />
+        <%} %>
     </div>
     
 </asp:Content>
