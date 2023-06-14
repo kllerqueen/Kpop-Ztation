@@ -8,8 +8,8 @@
 </asp:Content>
 
 <asp:Content ID="Conten3" ContentPlaceHolderID="WebsiteContent" runat="server">
+    
     <br /><br /><br /><br />
-
     <div class="register-box">
         <h2>Register</h2>
 
@@ -40,5 +40,6 @@
 
         </div>
     </div>
+    <br /><br /><br /><br />
 
 </asp:Content>

@@ -24,13 +24,13 @@ namespace Kpop_Ztation.View
         protected global::System.Web.UI.WebControls.Image albumImage;
 
         /// <summary>
-        /// albumName control.
+        /// albumTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label albumName;
+        protected global::System.Web.UI.WebControls.Label albumTitle;
 
         /// <summary>
         /// albumDesc control.

@@ -24,7 +24,7 @@ namespace Kpop_Ztation.View
             AlbumListView.DataBind();
         }
         protected void Page_Load(object sender, EventArgs e)
-        {
+        {            
             if (Request.QueryString["artistId"] != null)
             {
                 string ID = Request.QueryString["artistId"];
@@ -36,6 +36,11 @@ namespace Kpop_Ztation.View
 
                 updateListView();
             }
+            else
+            {
+                Response.Redirect("../View/Homepage.aspx");
+            }
+
         }
 
         protected void InsertAlbumButton_Click(object sender, EventArgs e)

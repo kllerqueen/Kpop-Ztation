@@ -21,7 +21,7 @@ namespace Kpop_Ztation.Repository
             db.SaveChanges();
             return;
         }
-       
+
         public static Album GetAlbumByAlbumID(int ID)
         {
             return (from u in db.Albums where ID.Equals(u.AlbumID) select u).FirstOrDefault();            
@@ -48,5 +48,7 @@ namespace Kpop_Ztation.Repository
             db.Albums.RemoveRange(albums);
             return db.SaveChanges();
         }
+
+
     }
 }

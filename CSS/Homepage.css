@@ -12,11 +12,12 @@
 }
 
 .listview-items table{
-    margin: 10px;
+    margin: 10px;    
 }
 
-.listview-container tr td{
+.listview-container tr td {
     text-align: center;
+    text-decoration: none;
 }
 
 
@@ -40,4 +41,3 @@
     height: 320px;
     width: 320px;
 }
-

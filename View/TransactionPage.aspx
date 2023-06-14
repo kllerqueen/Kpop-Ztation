@@ -7,10 +7,20 @@
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="WebsiteContent" runat="server">
-    <h1>Transaction History</h1>
-    <hr />
-    <div style="padding:50px">
-        <table style="width:500px" border="1">
+    
+    <div class="header">
+        <h1>Transaction History</h1>
+    </div>
+    
+
+    <div class="field" style="padding:50px">
+        <%if (tranDetail.Count == 0) { %>
+            <div class="header">
+                <h1>Transaction history for this User is empty</h1>
+            </div>
+        <%} %>
+        <%else { %>
+            <table style="width:500px" border="1">
             <thead>
                 <tr>
                     <th>Transaction ID</th>
@@ -28,7 +38,7 @@
                     <td><%= tran.TransactionHeader.TransactionID%></td>
                     <td><%= tran.TransactionHeader.TransactionDate %></td>
                     <td><%= tran.TransactionHeader.Customer.CustomerName %></td>
-                    <td><img src=<%= tran.Album.AlbumImage %> alt="Album Image" width="100" height="100"></td>
+                    <td><img src=<%= tran.Album.AlbumImage %> alt="Album Image" width="320" height="320"></td>
                     <td><%= tran.Album.AlbumName %></td>
                     <td><%= tran.Qty %></td>
                     <td><%= tran.Qty * tran.Album.AlbumPrice %></td>
@@ -36,5 +46,6 @@
                 <%} %>
             </tbody>
         </table>
+        <%} %>
     </div>
 </asp:Content>

@@ -13,8 +13,10 @@ namespace Kpop_Ztation.Handler
         public static void CreateCart(int customerId, int albumId, int qty)
         {
             Cart newCart = CartFactory.CreateCart(customerId, albumId, qty);
-
             CartRepository.CreateCart(newCart);
+
+            Album Collections = AlbumFactory.DecreaseAmount(albumId, qty);
+            AlbumRepository.UpdateAlbum(Collections);
             return;
         }
 
@@ -43,9 +45,12 @@ namespace Kpop_Ztation.Handler
             return lastTransactionID;
         }
 
-        public static void getCartDelete(int userID, int albumID, int qty)
+        public static void getCartDelete(int userID, int albumId, int qty)
         {
-            CartRepository.getCartDelete(userID, albumID, qty);
+            CartRepository.getCartDelete(userID, albumId, qty);
+
+            Album Collections = AlbumFactory.IncreaseAmount(albumId, qty);
+            AlbumRepository.UpdateAlbum(Collections);
             return;
         }
 

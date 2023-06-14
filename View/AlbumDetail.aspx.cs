@@ -21,10 +21,14 @@ namespace Kpop_Ztation.View
                 Album album = AlbumRepository.GetAlbumByAlbumID(albumID);
 
                 albumImage.ImageUrl = album.AlbumImage;
-                albumName.Text = "Album Name: " + album.AlbumName;
+                albumTitle.Text = "Album Title: " + album.AlbumName;
                 albumDesc.Text = album.AlbumDescription;
                 albumPrice.Text = "Price: Rp." + album.AlbumPrice;
                 albumStock.Text = "Available stock: " + album.AlbumStock;
+            }
+            else
+            {
+                Response.Redirect("../View/Homepage.aspx");
             }
         }
 

@@ -13,18 +13,19 @@
             <h1>Album Detail</h1> 
         </div>
 
-        <asp:Image ID="albumImage" class="image-header" runat="server" /> <br />
-        <asp:Label ID="albumName" runat="server"  Text=''></asp:Label> <br />
-        <asp:Label ID="albumDesc" runat="server"  Text=''></asp:Label> <br />
-        <asp:Label ID="albumPrice" runat="server"  Text=''></asp:Label> <br />
-        <asp:Label ID="albumStock" runat="server"  Text=''></asp:Label> <br />
-        <asp:Label ID="errorTxt" runat="server"  Text=''></asp:Label> <br />
+        <asp:Image ID="albumImage" class="image-header" runat="server" /> 
+        <asp:Label ID="albumTitle" class="field-item" runat="server"  Text=''></asp:Label> 
+        <asp:Label ID="albumDesc" class="field-item" runat="server"  Text=''></asp:Label> 
+        <asp:Label ID="albumPrice" class="field-item" runat="server"  Text=''></asp:Label> 
+        <asp:Label ID="albumStock" class="field-item" runat="server"  Text=''></asp:Label> 
+        <asp:Label ID="errorTxt" class="field-item" runat="server"  Text=''></asp:Label> 
         
-        <%if (checkRole() == false || Session["User"] != null)
+        <%if (Session["User"] != null && !checkRole())
             { %>
-                <asp:TextBox ID="purchaseAmount" runat="server" placeholder="Amount to buy"></asp:TextBox>
-                <asp:Button ID="addCart" runat="server" Text="Add to Cart" OnClick="addCart_Click" /> <br /><br /><br />
+                <asp:TextBox ID="purchaseAmount" class="field-item" runat="server" placeholder="Amount to buy"></asp:TextBox>
+                <asp:Button ID="addCart" class="button" runat="server" Text="Add to Cart" OnClick="addCart_Click" />
         <%} %>
     </div>
+    <br /><br />
     
 </asp:Content>

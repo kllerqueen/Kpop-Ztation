@@ -9,5 +9,14 @@
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="WebsiteContent" runat="server">
-    <CR:CrystalReportViewer ID="CrystalReportViewer1" runat="server" AutoDataBind="true" />
+    
+    <div class="field">
+
+        <div class="header">
+            <h1>Transaction Report</h1>
+        </div>
+
+        <CR:CrystalReportViewer ID="CrystalReportViewer1" runat="server" AutoDataBind="true" />
+    </div>
+
 </asp:Content>

@@ -33,5 +33,21 @@ namespace Kpop_Ztation.Factory
 
             return Collection;
         }
+
+        public static Album DecreaseAmount(int albumId, int qty)
+        {
+            Album Collection = AlbumRepository.GetAlbumByAlbumID(albumId);
+            Collection.AlbumStock -= qty;
+
+            return Collection;
+        }
+
+        public static Album IncreaseAmount(int albumId, int qty)
+        {
+            Album Collection = AlbumRepository.GetAlbumByAlbumID(albumId);
+            Collection.AlbumStock += qty;
+
+            return Collection;
+        }
     }
 }

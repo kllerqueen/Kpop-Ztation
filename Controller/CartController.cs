@@ -21,10 +21,10 @@ namespace Kpop_Ztation.Controller
             return;
         }
 
-        public static void RemoveAllItems(List<Cart> cartList, int userID)
+        public static String RemoveAllItems(List<Cart> cartList, int userID)
         {
             CartHandler.RemoveAllItems(cartList, userID);
-            return;
+            return "Cart checked out successfuly";
         }
 
         public static List<Cart> getAllCarts(int userID)

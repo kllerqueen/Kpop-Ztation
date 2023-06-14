@@ -167,9 +167,9 @@ ul li {
     justify-content: center;
 }
 
-    .listview-container tr td {
-        text-align: center;
-    }
+.listview-container tr td {
+    text-align: center;
+}
 
 .list {
     display: inline-block;
@@ -183,6 +183,6 @@ ul li {
 }
 
 .image-header{
-    width: 520px;
-    height: 520px;
+    width: 420px;
+    height: 420px;
 }

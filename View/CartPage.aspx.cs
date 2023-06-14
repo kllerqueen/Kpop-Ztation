@@ -95,9 +95,9 @@ namespace Kpop_Ztation.View
                 {
                     CartController.addTransactionDetail(lastID, item.AlbumID, item.Qty);
                 }
-
-                CartController.RemoveAllItems(cartList, getUserID());
-                Response.Redirect("../View/Homepage.aspx");
+                
+                string lblText = CartController.RemoveAllItems(cartList, getUserID());
+                errorLbl.Text = lblText;
             }
         }
 
