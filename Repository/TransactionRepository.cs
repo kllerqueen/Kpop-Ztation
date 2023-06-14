@@ -39,5 +39,10 @@ namespace Kpop_Ztation.Repository
         {
             return (from TransactionDetail in db.TransactionDetails where TransactionDetail.TransactionID == transactionId select TransactionDetail).ToList();
         }
+
+        public static List<TransactionHeader> getTransactions()
+        {
+            return db.TransactionHeaders.ToList();
+        }
     }
 }

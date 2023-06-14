@@ -44,5 +44,10 @@ namespace Kpop_Ztation.Handler
             List<TransactionDetail> allTransactionDetail = TransactionRepository.getAllTransactionDetail(transactionId);
             return allTransactionDetail;
         }
+
+        public static List<TransactionHeader> getTransaction()
+        {
+            return TransactionRepository.getTransactions();
+        }
     }
 }
