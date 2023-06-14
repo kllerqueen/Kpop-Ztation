@@ -17,5 +17,38 @@ namespace Kpop_Ztation.Handler
             CartRepository.CreateCart(newCart);
             return;
         }
+
+        public static void UpdateCart()
+        {
+            CartRepository.UpdateCart();
+            return;
+        }
+
+        public static void RemoveAllItems(List<Cart> cartList, int userID)
+        {
+            cartList = CartRepository.getAllCarts(userID);
+            CartRepository.RemoveAllItems(cartList);
+            return;
+        }
+
+        public static List<Cart> getAllCarts(int userID)
+        {
+            List<Cart> allUserItems = CartRepository.getAllCarts(userID);
+            return allUserItems;
+        }
+
+        public static int getLastTransactionID(int userID)
+        {
+            int lastTransactionID = CartRepository.getLastTransactionID(userID);
+            return lastTransactionID;
+        }
+
+        public static Cart getCartDelete(int userID, int albumID)
+        {
+            Cart cartDelete = CartRepository.getCartDelete(userID, albumID);
+            return cartDelete;
+        }
+
+
     }
 }

@@ -25,5 +25,24 @@ namespace Kpop_Ztation.Handler
             TransactionRepository.CreateTransactionDetail(history);
             return;
         }
+
+        public static void UpdateTransaction()
+        {
+            TransactionRepository.UpdateTransaction();
+            return;
+        }
+
+
+        public static List<int> getAllTransactionHeaderID(int userID)
+        {
+            List<int> allTransactionHeaderID = TransactionRepository.getAllTransactionHeaderID(userID);
+            return allTransactionHeaderID;
+        }
+
+        public static List<TransactionDetail> getAllTransactionDetail(int transactionId)
+        {
+            List<TransactionDetail> allTransactionDetail = TransactionRepository.getAllTransactionDetail(transactionId);
+            return allTransactionDetail;
+        }
     }
 }

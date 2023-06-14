@@ -1,4 +1,5 @@
-﻿using Kpop_Ztation.Model;
+﻿using Kpop_Ztation.Controller;
+using Kpop_Ztation.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,26 +12,27 @@ namespace Kpop_Ztation.View
     public partial class TransactionPage : System.Web.UI.Page
     {
         static KpopZtationDatabaseEntities1 db = new KpopZtationDatabaseEntities1();
-        public List<int> tranHead = new List<int>();
+        public List<int> tranHeadID = new List<int>();
         public List<TransactionDetail> tranDetail = new List<TransactionDetail>();
 
-        public List<int> getAllTransactionHeaderID()
+        protected int getUserID()
         {
-            return (from TransactionHeader in db.TransactionHeaders where TransactionHeader.CustomerID == (int)Session["User"] select TransactionHeader.TransactionID).ToList();
-        }
-
-        public List<TransactionDetail> getAllTransactionDetail(int transactionId)
-        {
-            return (from TransactionDetail in db.TransactionDetails where TransactionDetail.TransactionID == transactionId select TransactionDetail).ToList();
+            String userID = Session["User"].ToString();
+            int currUserID = int.Parse(userID);
+            return currUserID;
         }
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            tranHead = getAllTransactionHeaderID();
-            foreach (var tran in tranHead)
+            if (Session["User"] == null)
             {
-                List<TransactionDetail> tranTempList = getAllTransactionDetail(tran);
-                foreach (var tranDet in tranTempList)
+                Response.Redirect("../View/LoginPage.aspx");
+            }
+            tranHeadID = TransactionController.getAllTransactionHeaderID(getUserID());
+            foreach (var tran in tranHeadID)
+            {
+                List<TransactionDetail> tranDetTemp = TransactionController.getAllTransactionDetail(tran);
+                foreach (var tranDet in tranDetTemp)
                 {
                     tranDetail.Add(tranDet);
                 }

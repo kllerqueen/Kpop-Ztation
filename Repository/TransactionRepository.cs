@@ -13,27 +13,31 @@ namespace Kpop_Ztation.Repository
         public static void CreateTransactionHeader(TransactionHeader th)
         {
             db.TransactionHeaders.Add(th);
-            db.SaveChanges();
-            return;
-        }
-
-        public static void UpdateTransactionHeader(TransactionHeader th)
-        {
-            db.SaveChanges();
+            UpdateTransaction();
             return;
         }
 
         public static void CreateTransactionDetail(TransactionDetail td)
         {
             db.TransactionDetails.Add(td);
+            UpdateTransaction();
+            return;
+        }
+
+        public static void UpdateTransaction()
+        {
             db.SaveChanges();
             return;
         }
 
-        public static void UpdateTransactionDetail(TransactionDetail td)
+        public static List<int> getAllTransactionHeaderID(int userID)
         {
-            db.SaveChanges();
-            return;
+            return (from TransactionHeader in db.TransactionHeaders where TransactionHeader.CustomerID == userID select TransactionHeader.TransactionID).ToList();
+        }
+
+        public static List<TransactionDetail> getAllTransactionDetail(int transactionId)
+        {
+            return (from TransactionDetail in db.TransactionDetails where TransactionDetail.TransactionID == transactionId select TransactionDetail).ToList();
         }
     }
 }

@@ -12,31 +12,31 @@ namespace Kpop_Ztation.View
 {
     public class CartItem
     {
-        public String albumPicture;
-        public String albumName;
-        public int Quantity;
-        public int albumPrice;
-
+        public String Picture { get; set; }
+        public String Name { get; set; }
+        public int Quantity { get; set; }
+        public int Price { get; set; }
     }
 
     public partial class CartPage : System.Web.UI.Page
     {
         static KpopZtationDatabaseEntities1 db = new KpopZtationDatabaseEntities1();
         List<Cart> cartList = new List<Cart>();
-        
 
-        // Still need to revise where to each part of the code
-        // Hubungin ke controller -> handler -> repo instead of Backend -> repo
+        protected int getUserID()
+        {
+            String userID = Session["User"].ToString();
+            int currUserID = int.Parse(userID);
+            return currUserID;
+        }
+
         protected void refreshTable()
         {
-            int id = int.Parse(Session["User"].ToString());
-
             List<CartItem> cartItems = new List<CartItem>();
-            cartList = CartController.GetAllCarts(id);
-
+            cartList = CartController.getAllCarts(getUserID());
             foreach (var item in cartList)
             {
-                CartItem dataList = new CartItem { albumPicture = item.Album.AlbumImage, albumName = item.Album.AlbumName, albumPrice = item.Album.AlbumPrice, Quantity = item.Qty };
+                CartItem dataList = new CartItem { Picture = item.Album.AlbumImage, Name = item.Album.AlbumName, Quantity = item.Qty, Price = item.Album.AlbumPrice };
                 cartItems.Add(dataList);
             }
 
@@ -46,7 +46,7 @@ namespace Kpop_Ztation.View
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(Session["User"] == null)
+            if (Session["User"] == null)
             {
                 Response.Redirect("../View/LoginPage.aspx");
             }
@@ -58,31 +58,23 @@ namespace Kpop_Ztation.View
         {
             var item = cartList[e.RowIndex];
             var albumID = item.AlbumID;
-            String id = (string)Session["User"];
-            Cart toDelete = db.Carts.FirstOrDefault(c => c.CustomerID == (int)Session["User"] && c.AlbumID == albumID);
+            Cart toDelete = CartController.getCartDelete(getUserID(), albumID);
 
             db.Carts.Remove(toDelete);
-            db.SaveChanges();
+            CartController.UpdateCart();
             refreshTable();
-        }
-
-        public static int RemoveAllItems(List<Cart> cartList)
-        {
-            db.Carts.RemoveRange(cartList);
-            return db.SaveChanges();
         }
 
         protected void CheckOutButton_Click(object sender, EventArgs e)
         {
-            TransactionController.CreateTransactionHeader(DateTime.Now, (int)Session["User"]);
-            var lastID = db.TransactionHeaders.OrderByDescending(item => item.TransactionID).Select(item => item.TransactionID).FirstOrDefault();
-            foreach(var item in cartList)
+            CartController.addTransactionHeader(DateTime.Now, getUserID());
+            int lastID = CartController.getLastTransactionID(getUserID());
+            foreach (var item in cartList)
             {
-                TransactionController.CreateTransactionDetail(lastID, item.AlbumID, item.Qty);
+                CartController.addTransactionDetail(lastID, item.AlbumID, item.Qty);
             }
 
-            RemoveAllItems(cartList);
-            db.SaveChanges();
+            CartController.RemoveAllItems(cartList, getUserID());
         }
     }
 }

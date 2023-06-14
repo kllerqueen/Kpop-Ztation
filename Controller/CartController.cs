@@ -1,6 +1,5 @@
 ﻿using Kpop_Ztation.Handler;
 using Kpop_Ztation.Model;
-using Kpop_Ztation.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,9 +15,46 @@ namespace Kpop_Ztation.Controller
             return;
         }
 
-        public static List<Cart> GetAllCarts(int customerId)
+        public static void UpdateCart()
         {
-            return CartRepository.GetAllCarts(customerId);
+            CartHandler.UpdateCart();
+            return;
+        }
+
+        public static void RemoveAllItems(List<Cart> cartList, int userID)
+        {
+            CartHandler.RemoveAllItems(cartList, userID);
+            return;
+        }
+
+        public static List<Cart> getAllCarts(int userID)
+        {
+            List<Cart> allUserItems = CartHandler.getAllCarts(userID);
+            return allUserItems;
+        }
+
+        public static int getLastTransactionID(int userID)
+        {
+            int lastTransactionID = CartHandler.getLastTransactionID(userID);
+            return lastTransactionID;
+        }
+
+        public static Cart getCartDelete(int userID, int albumID)
+        {
+            Cart cartDelete = CartHandler.getCartDelete(userID, albumID);
+            return cartDelete;
+        }
+
+        public static void addTransactionHeader(DateTime transactionDate, int userId)
+        {
+            TransactionController.CreateTransactionHeader(transactionDate, userId);
+            return;
+        }
+
+        public static void addTransactionDetail(int transactionId, int albumId, int qty)
+        {
+            TransactionController.CreateTransactionDetail(transactionId, albumId, qty);
+            return;
         }
     }
 }
