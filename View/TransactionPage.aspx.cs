@@ -27,6 +27,9 @@ namespace Kpop_Ztation.View
             if (Session["User"] == null)
             {
                 Response.Redirect("../View/LoginPage.aspx");
+            } else if (!checkUserRole())
+            {
+                Response.Redirect("../View/Homepage.aspx");
             }
             tranHeadID = TransactionController.getAllTransactionHeaderID(getUserID());
             foreach (var tran in tranHeadID)
@@ -37,6 +40,17 @@ namespace Kpop_Ztation.View
                     tranDetail.Add(tranDet);
                 }
             }
+        }
+
+        protected bool checkUserRole()
+        {
+            Customer data = AccountController.GetCustomer(getUserID());
+
+            if (data.CustomerRole.Equals("User"))
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

@@ -30,7 +30,7 @@
                     <td><%= tran.TransactionHeader.TransactionDate %></td>
                     <td><%= tran.TransactionHeader.Customer.CustomerName %></td>
                     <td> Courier Name </td>
-                    <td><%= tran.Album.AlbumImage %></td>
+                    <td><img src=<%= tran.Album.AlbumImage %> alt="Album Image" width="100" height="100"></td>
                     <td><%= tran.Album.AlbumName %></td>
                     <td><%= tran.Qty %></td>
                     <td><%= tran.Qty * tran.Album.AlbumPrice %></td>
